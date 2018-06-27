@@ -1,0 +1,80 @@
+{
+ "name": "中国",
+ "children": [
+  {
+   "name": "湖北",
+   "Index":123456,
+   "children": [
+    {"name": "武汉", "value": 17010},
+    {"name": "荆州", "value": 1041},
+    {"name": "襄阳", "value": 5176}
+   ]
+  },
+  {
+   "name": "湖南",
+   "children": [
+    {"name": "长沙", "value": 17010},
+    {"name": "珠洲", "value": 1041},
+    {"name": "岳阳", "value": 5176}
+   ]
+  },
+  {
+   "name": "广东",
+   "children": [
+    {"name": "广州", "value": 3331},
+    {"name": "深圳", "value": 772},
+    {"name": "中山", "value": 3322}
+   ]
+  },
+  {
+   "name": "广西",
+   "children": [
+    {"name": "桂林", "value": 8833},
+    {"name": "玉林", "value": 1732}
+   ]
+  },
+  {
+   "name": "河南",
+   "children": [
+    {"name": "驻马店", "value": 4116}
+   ]
+  },
+  {
+   "name": "河北",
+   "children": [
+    {"name": "张家口", "value": 1082},
+    {"name": "石家庄", "value": 1336}
+   ]
+  },
+  {
+   "name": "山东",
+   "children": [
+    {"name": "青岛", "value": 1616},
+    {"name": "烟台", "value": 1027},
+    {"name": "济南", "value": 3891}
+   ]
+  },
+  {
+   "name": "山西",
+   "children": [
+    {"name": "太原", "value": 2105},
+    {"name": "大同", "value": 1316}
+   ]
+  },
+  {
+   "name": "福建",
+   "children": [
+    {"name": "厦门", "value": 8258},
+    {"name": "虎门", "value": 10001},
+    {"name": "福州", "value": 12555}
+   ]
+  },
+  {
+   "name": "江西",
+   "children": [
+    {"name": "Visualization", "value": 16540},
+    {"name": "Visualization", "value": 16540}
+   ]
+  }
+ ]
+}

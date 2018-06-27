@@ -1,0 +1,314 @@
+{
+    "cityMapData": {
+        "result": [{
+            "MarkEZInfo": {
+                "admin_contact": "25623555",
+                "admin_name": "chmi",
+                "cid": "76",
+                "coordinate": "00000",
+                "count": "1",
+                "json_zt": "0",
+                "location": "0000",
+                "name": "36985",
+                "online_server_num": "0",
+                "online_workstation_num": "0",
+                "photo_url": "AdminICO\/20170316173924_76.png",
+                "total_workstation_num": "0",
+                "url": "#/dataMap/oneCity/s"
+            },
+            "CityCode": "86",
+            "id": "76",
+            "markName": "\u6b66\u6c49",
+            "markX": "114.311582",
+            "markY": "30.598467"
+        }]
+    },
+    "termTypeRadio": {
+        "result": [{
+                "os": "CENTOS",
+                "osNum": "680",
+                "proportion": "6.2617"
+            },
+            {
+                "os": "DEEPIN",
+                "osNum": "5720",
+                "proportion": "25.4206"
+            },
+            {
+                "os": "Windows10",
+                "osNum": "2410",
+                "proportion": "41.2150"
+            },
+            {
+                "os": "Windows7",
+                "osNum": "1230",
+                "proportion": "20.8411"
+            },
+            {
+                "os": "Windows8",
+                "osNum": "3570",
+                "proportion": "6.2617"
+            }
+        ]
+    },
+    "cityTermRanking": {
+        "result": [{
+                "cityCode": "511500",
+                "cityName": "\u5317\u4eac",
+                "termNum": "11"
+            },
+            {
+                "cityCode": "511500",
+                "cityName": "\u6b66\u6c49",
+                "termNum": "111"
+            },
+            {
+                "cityCode": "511500",
+                "cityName": "\u4e0a\u6d77",
+                "termNum": "222"
+            },
+            {
+                "cityCode": "511500",
+                "cityName": "\u5e7f\u5dde",
+                "termNum": "333"
+            },
+            {
+                "cityCode": "511500",
+                "cityName": "\u676d\u5dde",
+                "termNum": "444"
+            },
+            {
+                "cityCode": "511500",
+                "cityName": "\u6df1\u5733",
+                "termNum": "555"
+            },
+            {
+                "cityCode": "511500",
+                "cityName": "\u957f\u6c99",
+                "termNum": "666"
+            },
+            {
+                "cityCode": "511500",
+                "cityName": "\u53a6\u95e8",
+                "termNum": "777"
+            },
+            {
+                "cityCode": "511500",
+                "cityName": "\u798f\u5efa",
+                "termNum": "888"
+            },
+            {
+                "cityCode": "511500",
+                "cityName": "\u4e09\u4e9a",
+                "termNum": "999"
+            }
+        ]
+    },
+    "appUseRanking": {
+        "result": [{
+                "appName": "excel",
+                "userNum": "51"
+            },
+            {
+                "appName": "excel",
+                "userNum": "232"
+            },
+            {
+                "appName": "excel",
+                "userNum": "323"
+            },
+            {
+                "appName": "excel",
+                "userNum": "414"
+            },
+            {
+                "appName": "excel",
+                "userNum": "565"
+            },
+            {
+                "appName": "excel",
+                "userNum": "786"
+            },
+            {
+                "appName": "excel",
+                "userNum": "857"
+            },
+            {
+                "appName": "excel",
+                "userNum": "892"
+            },
+            {
+                "appName": "excel",
+                "userNum": "1424"
+            },
+            {
+                "appName": "excel",
+                "userNum": "1789"
+            }
+        ]
+    },
+    "cityCustomActivity": {
+        "result": [{
+                "user_ip": "192.168.2.36",
+                "runtime": "629"
+            },
+            {
+                "user_ip": "192.168.3.46",
+                "runtime": "276"
+            },
+            {
+                "user_ip": "192.168.0.19",
+                "runtime": "245"
+            },
+            {
+                "user_ip": "192.168.0.251",
+                "runtime": "340"
+            },
+            {
+                "user_ip": "192.168.0.86",
+                "runtime": "320"
+            },
+            {
+                "user_ip": "192.168.0.73",
+                "runtime": "425"
+            },
+            {
+                "user_ip": "192.168.0.99",
+                "runtime": "519"
+            },
+            {
+                "user_ip": "192.168.0.16",
+                "runtime": "526"
+            },
+            {
+                "user_ip": "192.168.3.139",
+                "runtime": "342"
+            },
+            {
+                "user_ip": "192.168.0.146",
+                "runtime": "699"
+            }
+        ]
+    },
+    "dateTermBroken": {
+        "result": [
+            { "time": "一月1", "num": "512" },
+            { "time": "二月", "num": "356" },
+            { "time": "三月", "num": "129" },
+            { "time": "四月", "num": "228" },
+            { "time": "五月", "num": "235" },
+            { "time": "六月", "num": "246" },
+            { "time": "七月", "num": "129" },
+            { "time": "八月", "num": "537" },
+            { "time": "九月", "num": "232" },
+            { "time": "十月", "num": "412" },
+            { "time": "十一月", "num": "521" },
+            { "time": "十二月", "num": "214" }
+        ]
+    },
+    "serviceWorkingNum": {
+        "result": [
+            { "time": "一月", "num": "121" },
+            { "time": "二月", "num": "956" },
+            { "time": "三月", "num": "329" },
+            { "time": "四月", "num": "428" },
+            { "time": "五月", "num": "223" },
+            { "time": "六月", "num": "156" },
+            { "time": "七月", "num": "459" },
+            { "time": "八月", "num": "227" },
+            { "time": "九月", "num": "312" },
+            { "time": "十月", "num": "242" },
+            { "time": "十一月", "num": "251" },
+            { "time": "十二月", "num": "124" }
+        ]
+    },
+    "domainEchart": {
+        "result": [
+            { "time": "一月", "wps": "121", "excel": "656", "ps": "145", "word": "332" },
+            { "time": "二月", "wps": "421", "excel": "156", "ps": "145", "word": "521" },
+            { "time": "三月", "wps": "4457", "excel": "656", "ps": "125", "word": "723" },
+            { "time": "四月", "wps": "344", "excel": "262", "ps": "192", "word": "832" },
+            { "time": "五月", "wps": "823", "excel": "356", "ps": "175", "word": "929" },
+            { "time": "六月", "wps": "421", "excel": "656", "ps": "232", "word": "989" },
+            { "time": "七月", "wps": "321", "excel": "178", "ps": "535", "word": "129" },
+            { "time": "八月", "wps": "743", "excel": "746", "ps": "235", "word": "239" },
+            { "time": "九月", "wps": "857", "excel": "956", "ps": "725", "word": "39" },
+            { "time": "十月", "wps": "246", "excel": "278", "ps": "225", "word": "99" },
+            { "time": "十一月", "wps": "272", "excel": "241", "ps": "725", "word": "331" },
+            { "time": "十二月", "wps": "846", "excel": "659", "ps": "562", "word": "235" }
+        ]
+    },
+    "horLineEchart": {
+        "result": [
+            { "time": "周一", "wps": "121", "excel": "46", "ps": "535", "word": "552" },
+            { "time": "周二", "wps": "421", "excel": "566", "ps": "125", "word": "451" },
+            { "time": "周三", "wps": "427", "excel": "126", "ps": "225", "word": "203" },
+            { "time": "周四", "wps": "734", "excel": "562", "ps": "712", "word": "982" },
+            { "time": "周五", "wps": "153", "excel": "346", "ps": "525", "word": "899" },
+            { "time": "周六", "wps": "671", "excel": "226", "ps": "832", "word": "599" },
+            { "time": "周七", "wps": "451", "excel": "178", "ps": "335", "word": "599" }
+        ]
+    },
+    "productType": {
+        "count": 5,
+        "result": [{
+                "veName": "VEAPP",
+                "veNum": "35721",
+                "proportion": "20.828571400"
+            },
+            {
+                "veName": "VEBOX",
+                "veNum": "34278",
+                "proportion": "19.987172000"
+            },
+            {
+                "veName": "VEDesktop",
+                "veNum": "35306",
+                "proportion": "20.586588900"
+            },
+            {
+                "veName": "VEMS",
+                "veNum": "32091",
+                "proportion": "18.711953300"
+            },
+            {
+                "veName": "VENGD",
+                "veNum": "34104",
+                "proportion": "19.885714200"
+            }
+        ]
+    },
+    "terminals": {
+        "all": 2342,
+        "broken": 56,
+        "online": 67
+    },
+    "terminalTypeStatistics":{
+        "result": [{
+                "os": "CENTOS",
+                "osNum": "670",
+                "proportion": "6.2617"
+            },
+            {
+                "os": "DEEPIN",
+                "osNum": "2720",
+                "proportion": "25.4206"
+            },
+            {
+                "os": "Windows10",
+                "osNum": "4410",
+                "proportion": "41.2150"
+            },
+            {
+                "os": "Windows7",
+                "osNum": "2230",
+                "proportion": "20.8411"
+            },
+            {
+                "os": "Windows8",
+                "osNum": "670",
+                "proportion": "6.2617"
+            }
+        ]
+    }
+}

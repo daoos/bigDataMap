@@ -1,0 +1,32 @@
+{
+    "name": "中国",
+    "value": 80014,
+    "children": [{
+            "name": "湖北",
+            "value": 20014,
+            "children": [
+                { "name": "武汉", "value": 17010 },
+                { "name": "荆州", "value": 1041 },
+                { "name": "襄阳", "value": 5176 }
+            ]
+        },
+        {
+            "name": "湖南",
+            "value": 30014,
+            "children": [
+                { "name": "长沙", "value": 17010 },
+                { "name": "珠洲", "value": 1041 },
+                { "name": "岳阳", "value": 5176 }
+            ]
+        },
+        {
+            "name": "广东",
+            "value": 10014,
+            "children": [
+                { "name": "广州", "value": 3331 },
+                { "name": "深圳", "value": 772 },
+                { "name": "中山", "value": 3322 }
+            ]
+        }
+    ]
+}

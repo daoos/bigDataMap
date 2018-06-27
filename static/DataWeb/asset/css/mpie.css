@@ -1,0 +1,11 @@
+.Bottom_Div{
+    display: none;
+}
+
+.MainDiv_Left ,.MainDiv_Right{
+    display: none;
+}
+
+.PieDiv_li{
+    height: 800px;
+}

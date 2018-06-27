@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>和信大数据全国监控平台</title>
+
+    <script src="asset/js/jquery-1.11.0.min.js"></script>
+    <script src="asset/js/jquery.jsonp.js"></script>
+
+
+    <script src="build/dist/echarts.js"></script>
+    <script type="text/javascript">
+        var option;
+        var myChart;
+        var baseUrl = "http://192.168.50.145:8282/DataServer/MapAjaxInfoServlet.do"
+        var env = false
+    </script>
+
+    <link rel="stylesheet" href="asset/css/gcstyle.css">
+    <link rel="stylesheet" href="asset/css/index_map.css">
+    <script language='javascript' src="./asset/js/gcscript.js"></script>
+
+    <style>
+        a {
+            text-decoration: none;
+            color: #00ff00;
+        }
+        
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-size: 100% 100%;
+            overflow: hidden;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <h2><span class="tx"><b>和信大数据可视化分析</b></span></h2>
+    </header>
+
+    <div class="Main_Div">
+        <div id="MainMap">
+            <div id="hzxyMap">
+                <script>
+                    
+                    var svgUrl;
+
+                    function GetQueryString(name) {
+                        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                        var r = window.location.search.substr(1).match(reg);
+                        if (r != null) return unescape(r[2]);
+                        return null;
+                    }
+
+                    //更具参数获取 svg的地址
+                    //
+                    $.ajax({
+                        url: baseUrl,
+                        type: 'get',
+                        data: {
+                            id: GetQueryString('id'),
+                            dz_type: 'getSVGfile'
+                        },
+                        async: false,
+                        success: function(data) {
+                            if (env) {
+                                data = {
+                                    "state": 1,
+                                    "message": "success",
+                                    "data": {
+                                        "file": "http://192.168.50.160:8080/DataMapManager/veSVG/hainanzf.svg"
+                                    }
+                                }
+                            }
+                            if (data.data!=null) {
+                                console.log('地图获取成功')
+                                var urlString = data.data.file
+                                var arrUrl = urlString.split('/veSVG/')
+                                svgUrl = arrUrl[0] + '/interface/veSVG/' + arrUrl[1]
+                            } else {
+                                // showError()
+                            }
+                        }
+
+                    })
+
+
+                    var jsMap = {}
+
+                    function nTooltip(params, ticket, callback) {
+
+                        var name = params.name;
+                        var rid = params.value;
+
+                        if (jsMap[name] == undefined) {
+
+                            var DivShow = "<div class='_DivShow'>";
+                            DivShow += "<p>暂无相关数据...</p>";
+                            DivShow += "</div>";
+                            setTimeout(function() {
+                                callback(ticket, DivShow)
+                            }, 1);
+
+                        } else {
+                            // ShowError()
+                        }
+
+                        return '...';
+                    }
+
+                    function aTooltip(params, ticket, callback) {
+
+                        //var seriesName = params. seriesName;
+                        var name = params.name;
+                        var rid = params.value;
+
+                        // if (jsMap[name] == undefined) {
+                        if (params[1] == undefined) {
+
+                            var DivShow = "<div class='_DivShow' >";
+                            DivShow += "<p>....</p>";
+                            DivShow += "</div>";
+
+                            setTimeout(function() {
+                                callback(ticket, DivShow)
+                            }, 1);
+
+                        } else {
+                            var DivShow = "<div class='DivShow'  style='width: auto;height: auto'>";
+                            DivShow += "<p>名称：" + params[1] + " </p>";
+                            DivShow += "<hr>";
+                            // DivShow += "<div style='float: left'><p><img src='./image/avatar.jpg' width='80px' height='80px'/></p></div>";
+                            DivShow += "<div style='float: right;margin-right: 10px'>";
+                            DivShow += "</div>";
+                            DivShow += "</div>";
+                            setTimeout(function() {
+                                callback(ticket, DivShow)
+                            }, 1);
+
+                        }
+
+                        return '...';
+                    }
+
+                    function create_doc(text) {
+                        var xmlDoc = null;
+                        try //Internet Explorer
+                        {
+                            xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+                            xmlDoc.async = "false";
+                            xmlDoc.loadXML(text);
+                        } catch (e) {
+                            try //Firefox, Mozilla, Opera, etc.
+                            {
+                                parser = new DOMParser();
+                                xmlDoc = parser.parseFromString(text, "text/xml");
+                            } catch (e) {}
+                        }
+                        return xmlDoc;
+                    }
+
+
+                    function eConsole(param) {
+                        if (jsMap[param.name] != undefined) {
+                            // console.log(param)
+                            // alert(param.value)
+                            // alert(jsMap[param.name].url + "?xxID=" + param.value)
+                            // window.location.reload("http://192.168.50.179:8080/#/dataMap/point/" + param.value)
+                            // location.href =  "http://192.168.50.179:8080/#/dataMap/point/" + param.value;
+                            var urlArr = String(top.location.href).split('#')
+                            top.location.href = urlArr[0] +"/#/dataMap/point/15";
+                        }
+                    }
+
+                    require(
+                        [
+                            'echarts',
+                            'echarts/chart/map'
+                        ],
+                        function(ec) {
+                            var ecConfig = require('echarts/config');
+                            myChart = ec.init(document.getElementById('hzxyMap'));
+
+                            myChart.on(ecConfig.EVENT.CLICK, eConsole);
+
+                            require('echarts/util/mapData/params').params.hainanzf = {
+
+                                getGeoJson: function(callback) {
+                                    $.jsonp({
+                                        'contentType': "text/html;charset=UTF-8",
+                                        'url': 'http://' + svgUrl,
+                                        'data': {
+                                            dz_type: 'getSvgByName',
+                                            mapname: '',
+                                        },
+                                        'dataType': "jsonp",
+                                        'callbackParameter': "jsonCallback",
+                                        'async': false,
+                                        'success': function(data) {
+                                            console.log('地图下载成功')
+                                            // console.warn(create_doc(data));
+                                            callback(create_doc(data));
+                                        },
+                                        error: function(resp) {
+                                            console.error(resp);
+                                        }
+                                    });
+
+                                }
+                            }
+
+                            option = {
+                                title: {
+                                    show: false,
+                                    textStyle: {
+                                        color: '#fff'
+                                    }
+                                },
+                                tooltip: {
+                                    trigger: 'item',
+                                    formatter: function(params, ticket, callback) {
+                                        nTooltip(params, ticket, callback);
+                                    }
+                                },
+                                legend: {
+                                    show: false,
+                                    orient: 'vertical',
+                                    x: 'right',
+                                    data: []
+                                },
+                                dataRange: {
+                                    show: false,
+                                    min: 0,
+                                    max: 100,
+                                    x: 'center',
+                                    y: 'center',
+                                    tdext: ['High', 'Low'],
+                                    calculable: true,
+                                    itemHeight: 30,
+                                    color: ['#101010', '#505050', '#707070', '#909090']
+                                },
+
+                                series: [{
+                                    type: 'map',
+                                    mapType: 'hainanzf', // 自定义扩展图表类型
+                                    zlevel: 0,
+                                    roam: true,
+                                    itemStyle: {
+                                        normal: {
+                                            borderColor: 'rgba(100,149,237,1)',
+                                            borderWidth: 0.5,
+                                            areaStyle: {
+                                                color: ['#101010', '#FFFFFF'],
+                                            },
+                                            label: {
+                                                show: false
+                                            }
+                                        },
+                                        emphasis: {
+                                            label: {
+                                                show: false
+                                            }
+                                        }
+                                    },
+                                    data: [],
+                                    markPoint: {
+                                        symbolSize: 10,
+                                        effect: {
+                                            show: false,
+                                            shadowBlur: 0
+                                        },
+                                        itemStyle: {
+                                            normal: {
+                                                borderColor: '#00ff00',
+                                                borderWidth: 10,
+                                                label: {
+                                                    show: true
+                                                }
+                                            },
+                                            emphasis: {
+                                                borderColor: '#00ff00',
+                                                borderWidth: 10,
+                                                label: {
+                                                    show: true
+                                                }
+                                            }
+                                        },
+                                        data: [],
+                                        tooltip: {
+                                            trigger: 'item',
+                                            formatter: function(params, ticket, callback) {
+                                                aTooltip(params, ticket, callback);
+                                            }
+                                        },
+                                    },
+                                    geoCoord: {}
+                                }]
+                            };
+                            //请求锚点
+                            $.ajax({
+                                'url': baseUrl,
+                                'data': {
+                                    dz_type: 'geturl1markezinfosvg',
+                                    id: getUrlParam('id')
+                                },
+                                'type': 'get',
+                                'error': function(XMLHttpRequest, textStatus, errorThrown) {
+
+                                    // ShowError();
+                                },
+                                'success': function(res) {
+                                    console.log('地图标点成功')
+                                    var data = res.data.data
+                                    if (env) {
+                                        var data = [{
+                                            name: '一教学楼',
+                                            'x': 2365,
+                                            'y': 336,
+                                            'url': './veruntable.html'
+                                        }, {
+                                            name: '图书馆',
+                                            'x': 2184,
+                                            'y': 850,
+                                            'url': './veruntable.html'
+                                        }]
+                                    }
+                                    var dataObj = {
+                                        data: [],
+                                        geoCoord: {},
+                                        xxdata: {}
+                                    }
+                                    for (var i = 0, len = data.length; i < len; i++) {
+                                        var temData = {
+                                            'name': data[i].name
+                                        }
+                                        dataObj.data.push(temData)
+
+                                        dataObj.geoCoord[data[i].name] = [data[i].x, data[i].y]
+                                        dataObj.xxdata[data[i].name] = {
+                                            url: data[i].url
+                                        }
+                                    }
+
+                                        // var data = {
+                                        //     "data": [{
+                                        //         "name": "一教学楼",
+                                        //     }, {
+                                        //         "name": "图书馆",
+                                        //     }],
+                                        //     "geoCoord": {
+                                        //         "一教学楼": [
+                                        //             "2365",
+                                        //             "336"
+                                        //         ],
+                                        //         "图书馆": [
+                                        //             "2184",
+                                        //             "850"
+                                        //         ]
+                                        //     },
+                                        //     "xxdata": {
+                                        //         "一教学楼": {
+                                        //             "url": "./veruntable.html"
+                                        //         },
+                                        //         "图书馆": {
+                                        //             "url": "./veruntable.html"
+                                        //         }
+                                        //     }
+                                        // }
+                                    data = dataObj
+                                    option.series[0].markPoint.data = data.data;
+                                    option.series[0].geoCoord = data.geoCoord;
+                                    myChart.setOption(option, true);
+
+                                    jsMap = {};
+                                    jsMap = data.xxdata;
+                                }
+                            });
+                            // 为echarts对象加载数据
+
+                            myChart.setOption(option);
+                        }
+                    );
+                </script>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

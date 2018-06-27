@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>00</title>
+
+<link rel="stylesheet" href="toastr/toastr.css">
+<link rel="stylesheet" href="showmessage.css">
+
+<script type="text/javascript" src="jquery-1.11.0.js"></script>
+<script type="text/javascript" src="jBox.min.js"></script>
+<script type="text/javascript" src="toastr/toastr.min.js"></script>
+
+</head>
+<body>
+
+
+
+	<button onclick="ShowMessage_T('22222','00000',0);">00000000000000000000</button>
+	<button onclick="ShowMessage_N('22222','00000',1);">00000000000000000000</button>
+	<button onclick="ShowMessage_N('22222','00000',2);">00000000000000000000</button>
+	<button onclick="ShowMessage_N('22222','00000',3);">00000000000000000000</button>
+	<button onclick="ShowMessage_N('22222','00000',4);">00000000000000000000</button>
+
+  
+
+<script>
+
+   function ShowMessage_T( title_str, content_str,style_n ){
+   
+       var opts = {
+			"closeButton": true,
+			"debug": false,
+			"positionClass": "toast-top-full-width",
+			"onclick": null,
+			"showDuration": "300",
+			"hideDuration": "1000",
+			"timeOut": "5000",
+			"extendedTimeOut": "1000",
+			"showEasing": "swing",
+			"hideEasing": "linear",
+			"showMethod": "fadeIn",
+			"hideMethod": "fadeOut"
+		};
+		switch( style_n ){
+		   
+		   case 1:
+		     toastr.success(content_str, title_str, opts);
+		     break;
+		   
+		   case 2:
+		     toastr.error(content_str, title_str, opts);
+             break;			
+			
+           case 3:
+		     toastr.warning(content_str, title_str, opts);
+             break;
+			 
+           default:
+		     toastr.info(content_str, title_str, opts);
+             break;			
+		
+		}
+		
+   }
+
+   var colorsN = ['black', 'red', 'green', 'blue', 'yellow'];
+   var currentColorN = 0;
+   
+   function ShowMessage_N( title_str, content_str,style_n ){
+   
+		switch(style_n ){
+		
+			case 1:
+			  new jBox('Notice', {
+				content: title_str+'<br/>'+content_str,
+				position: {
+					x: 15,
+					y: 65
+				},
+				zIndex: 12000
+			  });
+			  break;
+			  
+			case 2:
+			  new jBox('Modal', {
+				attach: null,
+				closeButton: null,
+				animation: {
+					open: 'slide:left',
+					close: 'slide:right'
+				},
+				onCreated: function() {
+					this.content.css({
+						lineHeight: '40px',
+						padding: '60px 80px',
+						textAlign: 'center'
+					})
+				},
+				onClose: function() {
+				   //alert('000000');
+				},
+				content: title_str+'<br/>'+content_str
+			  }).open();
+			  break;
+			  
+			case 3:
+			    new jBox('Notice', {
+					attributes: {
+						x: 'left',
+						y: 'bottom'
+					},
+					theme: 'NoticeBorder',
+					color: 'black',
+					audio: '/plugins/jBox/Source/audio/blob',
+					volume: 100,
+					animation: {
+						open: 'slide:bottom',
+						close: 'slide:left'
+					},
+					onInit: function() {
+						this.options.color = colorsN[currentColorN];
+						this.options.title = title_str;
+						this.options.content = content_str;
+						currentColorN++; (currentColorN >= colorsN.length) && (currentColorN = 0)
+					},
+				});
+			    break;
+				
+            case 4:
+			    new jBox('Notice', {
+					autoClose: 10000,
+					attributes: {
+						x: 'right',
+						y: 'bottom'
+					},
+					stack: false,
+					animation: {
+						open: 'tada',
+						close: 'zoomIn'
+					},
+					title: title_str,
+					content: content_str,
+					onInit: function() {
+						this.options.color = colorsN[currentColorN];
+						currentColorN++; (currentColorN >= colorsN.length) && (currentColorN = 0)
+					},
+				});
+			    break;	  
+  
+			default:
+			   new jBox('Notice', {
+				content: title_str+'<br/>'+content_str,
+				position: {
+					x: 15,
+					y: 65
+				},
+				zIndex: 12000
+			  });
+			  break;
+		}
+   }
+
+</script>  
+
+
+
+</body></html>

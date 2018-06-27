@@ -1,0 +1,526 @@
+body {
+
+    padding: 0;
+    margin: 0;
+    --background-color: #101010;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /*background-image: url("../../image/5.jpg");*/
+}
+
+@font-face {
+    font-family: 'LED';
+    src: url('../fonts/LED.ttf') ;
+}
+
+.Top_Div, .Bottom_Div {
+
+    width: 100%;
+    position: fixed;
+    background-color: #000;
+    color: #FFF;
+    z-index: 999;
+}
+
+.Top_Div {
+    height: 40px;
+    top: 0px;
+}
+
+.Bottom_Div {
+    height: 400px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.BDTRButton {
+    float: right;
+    margin: 10px;
+    background-color: #FFF;
+    width: 25px;
+    text-align: center;;
+}
+
+.BOTTLText {
+    float: left;
+    margin: 10px;
+}
+
+.TDTitle {
+    position: relative;
+    margin: 10px;
+}
+
+.BDiv_Body {
+
+    float: left;
+    margin: 5px;
+    width: 100%;
+}
+
+#MainMap {
+
+    height: 900px;
+}
+
+.MainDiv_Left {
+    position: absolute;
+    top: 250px;
+    left: 20px;
+    color: #FFFFFF;
+    width: 400px;
+    z-index: 999;
+}
+
+.MainDiv_Right {
+    position: absolute;
+    top: 250px;
+    right: 20px;
+    color: #FFFFFF;
+    width: 400px;
+    z-index: 999;
+}
+
+.Main_PieDiv {
+
+    position: relative;
+    width: 100%;
+    margin-top: 200px;
+
+}
+
+.Main_PieDiv ul {
+    list-style: none;
+}
+
+.Main_PieDiv ul li {
+
+    display: inline-block;
+    width: 31%;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.PieDiv_li {
+
+    border: 2px solid #379082;
+    border-radius: 15px;
+    padding: 10px;
+    --color: #00ff00;
+    font-size: 14px;
+    background-color: rgba(1, 1, 1, 0.5);
+
+}
+
+.DivShow {
+    width: 400px;
+    height: 400px;
+    padding: 10px;
+}
+
+.MainZBS1 {
+
+    position: relative;
+    padding: 20px;
+    width: 400px;
+    height: 400px;
+}
+
+#bdata_l {
+    /*
+        color: #00ff00;
+        font-size: 12px;
+        font-family: 'LED';
+    */
+
+    border: 2px solid #379082;
+    border-radius: 15px;
+    padding: 20px;
+    color: #00ff00;
+    font-size: 14px;
+    font-family: 'LED';
+    background-color: rgba(1, 1, 1, 0.5);
+
+}
+
+.BDiv_Body ul {
+
+    list-style: none;
+    width: 100%;
+}
+
+.BDiv_Body ul li {
+
+    float: left;
+    margin-left: 40px;
+    width: 30%;
+}
+
+.Tmenu {
+
+    display: none;
+    color: #FFFFFF;
+    position: relative;
+    float: right;
+    margin-top: -30px;
+    margin-right: 10px;
+}
+
+.Tmenu a {
+
+    text-decoration: none;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 14px;
+    --font-weight: bold;
+}
+
+.BTableP {
+
+    width: 100%;
+    height: 280px;
+    border: 2px solid #379082;
+    border-radius: 15px;
+    padding: 10px;
+    color: #00ff00;
+    font-size: 14px;
+    --font-family: 'LED';
+    background-color: rgba(1, 1, 1, 0.5);
+}
+
+.BTableP tbody {
+
+}
+
+.Main_Div {
+
+    margin-top: 50px;
+}
+
+#hzxyMap {
+    margin: auto;
+    width: 95%;
+    height: 1400px;
+    border: 2px solid #379082;
+    border-radius: 15px;
+    color: #00ff00;
+    font-size: 14px;
+    --font-family: 'LED';
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#MainTree {
+
+    margin: auto;
+    width: 95%;
+    height: 800px;
+    border: 2px solid #379082;
+    border-radius: 15px;
+    padding: 10px;
+    color: #00ff00;
+    font-size: 14px;
+    --font-family: 'LED';
+    /*background-color: rgba(0, 0, 0, 0.5);*/
+}
+
+.Main_XList {
+
+    margin: auto;
+    margin-top: 20px;
+    width: 95%;
+    border: 2px solid #379082;
+    border-radius: 15px;
+    padding: 10px;
+    color: #00ff00;
+    font-size: 14px;
+    /*background-color: rgba(1, 1, 1, 0.5);*/
+}
+
+.vpclist {
+
+    position: relative;
+}
+
+.vpclist ul {
+
+    list-style: none;
+}
+
+.vpclist ul li {
+
+    display: inline-block;
+    margin: 25px;
+    width: 128px;
+    height: 128px;
+    color: #FFF;
+    text-align: center;
+}
+
+.vpclist ul li img {
+
+    width: 96px;
+    height: 96px;
+}
+
+#vpcTRList tr td img {
+
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.tip {
+
+    background: #1d1d1d;
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    width: 250px;
+    height: 300px;
+
+    border: 2px solid #379082;
+    border-radius: 15px;
+    padding: 20px;
+    color: #00ff00;
+    font-size: 14px;
+    --font-family: 'LED';
+    background-color: rgba(1, 1, 1, 0.5);
+
+}
+
+.Main_DTable {
+
+    display: none;
+    margin: auto;
+    margin-top: 20px;
+    width: 95%;
+    border: 2px solid #379082;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: rgba(1, 1, 1, 0.5);
+}
+
+.zdataTable {
+
+    width: 98%;
+    color: #FFFFFF;
+    font-size: 14px;
+    --font-family: 'LED';
+}
+
+.login-header {
+    width: 100%;
+    text-align: center;
+    height: 30px;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.SetupDlg {
+    width: 500px;
+    position: fixed;
+    border: #00ff00 solid 1px;
+    height: 280px;
+    top: 50%;
+    left: 50%;
+    display: none;
+    background: #000000;
+    box-shadow: 0px 0px 20px #ddd;
+    z-index: 9999;
+    margin-left: -250px;
+    margin-top: -140px;
+    font-size: 12px;
+}
+
+.SetupDlg-title {
+    width: 100%;
+    line-height: 40px;
+    height: 40px;
+    --font-size: 14px;
+    position: relative;
+    text-align: center;
+    color: #00FF00;
+    margin-top: 20px;
+}
+
+.SetupDlg-title span {
+    position: absolute;
+    --font-size: 12px;
+    right: -20px;
+    top: -30px;
+    background: #000000;
+    border: #ebebeb solid 1px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.SetupDlg-title span a {
+    display: block;
+}
+
+.input-content {
+    margin-top: 20px;
+}
+
+.SetupDlg-input {
+    overflow: hidden;
+    margin: 0px 0px 20px 0px;
+}
+
+.SetupDlg-input label {
+    float: left;
+    width: 90px;
+    padding-right: 10px;
+    text-align: right;
+    line-height: 20px;
+    height: 20px;
+    color: #00ff00
+}
+
+.SetupDlg-input input.list-input {
+    float: left;
+    color: #00FF00;
+    background-color: #101010;
+    height: 20px;
+    line-height: 20px;
+    width: 350px;
+    border: #00ff00 1px solid;
+    text-indent: 5px;
+}
+
+.SetupDlg-button {
+    width: 100px;
+    margin-left: 10px;
+    line-height: 25px;
+    border: #00ff00 1px solid;
+    float: left
+}
+
+.SetupDlg-button a {
+    display: block;
+}
+
+.SetupDlg-bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: #ebebeb;
+    filter: alpha(opacity=30);
+    -moz-opacity: 0.3;
+    -khtml-opacity: 0.3;
+    opacity: 0.3;
+    display: none;
+}
+
+.Dbutton {
+    float: right;
+    margin-right: 40px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.sptest em {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    background: url(../../image/icon.png) no-repeat center center;
+    cursor: pointer;
+    display: block;
+    position: relative;
+}
+
+.sptest em:after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 0 1px 2px rgba(0, 255, 0, 1);
+    top: 50%;
+    left: 50%;
+    margin-top: -60px;
+    margin-left: -60px;
+    z-index: 3;
+    opacity: 0;
+    -webkit-animation: halo 1s 0.5s infinite ease-out;
+    -moz-animation: halo 1s 0.5s infinite ease-out;
+    animation: halo 1s 0.5s infinite ease-out;
+}
+
+@-webkit-keyframes halo {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(0.1);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(1.2);
+    }
+}
+
+@-moz-keyframes halo {
+    0% {
+        opacity: 0;
+        -moz-transform: scale(0.1);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        -moz-transform: scale(1.2);
+    }
+}
+
+@-ms-keyframes halo {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-o-keyframes halo {
+    0% {
+        opacity: 0;
+        -o-transform: scale(0.1);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        -o-transform: scale(1.2);
+    }
+}
+
+@keyframes halo {
+    0% {
+        opacity: 0;
+        transform: scale(0.1);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+}
+
+

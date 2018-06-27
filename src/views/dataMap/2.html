@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    .bgCanvas {
+        position: relative;
+        top: -100vh;
+        left: 0;
+        z-index: -100;
+    }
+    
+    .borderBlue {
+        /* border: 1px solid #104569; */
+        border-radius: 3px;
+    }
+    
+    .height300 {
+        margin-top: 8vh;
+        height: 90vh;
+    }
+    
+    .height33 {
+        display: inline-block;
+        height: 32.8%;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background: #1A1A2E;
+        opacity: 0.5;
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+    }
+    
+    .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        color: #fff;
+        width: 100%;
+        padding: 10px;
+    }
+    
+    body {
+        background-color: #000000;
+        margin: 0px;
+        overflow: hidden;
+        background-image: radial-gradient(ellipse farthest-corner at center top, #23233f 0%, #000000 60%);
+    }
+    
+    .ball {
+        /* width: 500px;
+            height: 500px;
+            margin: 100px auto */
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        bottom: 10px;
+        left: 42%;
+    }
+    
+    .ball .ball-cube {
+        width: 100px;
+        height: 100px;
+        transform-style: preserve-3d;
+        transform: rotate(20deg) rotateX(20deg) rotateY(0deg);
+        animation: ball 8s linear infinite
+    }
+    
+    @keyframes ball {
+        0% {
+            transform: rotate(20deg) rotateX(-20deg) rotateY(0deg)
+        }
+        100% {
+            transform: rotate(20deg) rotateX(-20deg) rotateY(360deg)
+        }
+    }
+    
+    .ball .ball-cube div {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        position: absolute;
+        top: 0px;
+        left: 0px
+    }
+    
+    .ball .ball-cube .x1 {
+        transform: rotateY(0deg);
+    }
+    
+    .ball .ball-cube .x2 {
+        transform: rotateY(20deg);
+    }
+    
+    .ball .ball-cube .x3 {
+        transform: rotateY(40deg);
+    }
+    
+    .ball .ball-cube .x4 {
+        transform: rotateY(60deg);
+    }
+    
+    .ball .ball-cube .x5 {
+        transform: rotateY(80deg);
+    }
+    
+    .ball .ball-cube .x6 {
+        transform: rotateY(100deg);
+    }
+    
+    .ball .ball-cube .x7 {
+        transform: rotateY(120deg);
+    }
+    
+    .ball .ball-cube .x8 {
+        transform: rotateY(140deg);
+    }
+    
+    .ball .ball-cube .x9 {
+        transform: rotateY(160deg);
+    }
+    
+    .ball .ball-cube .y1 {
+        transform: rotateX(90deg) translateZ(40px) scale(0.6);
+    }
+    
+    .ball .ball-cube .y2 {
+        transform: rotateX(90deg) translateZ(30px) scale(0.7);
+    }
+    
+    .ball .ball-cube .y3 {
+        transform: rotateX(90deg) translateZ(20px) scale(0.8);
+    }
+    
+    .ball .ball-cube .y4 {
+        transform: rotateX(90deg) translateZ(10px) scale(0.9);
+    }
+    
+    .ball .ball-cube .y5 {
+        transform: rotateX(90deg) translateZ(0px);
+    }
+    
+    .ball .ball-cube .y6 {
+        transform: rotateX(90deg) translateZ(-10px) scale(0.9);
+    }
+    
+    .ball .ball-cube .y7 {
+        transform: rotateX(90deg) translateZ(-20px) scale(0.8);
+    }
+    
+    .ball .ball-cube .y8 {
+        transform: rotateX(90deg) translateZ(-30px) scale(0.7);
+    }
+    
+    .ball .ball-cube .y9 {
+        transform: rotateX(90deg) translateZ(-40px) scale(0.6);
+    }
+    
+    .main {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%
+    }
+    
+    .canvaszz {
+        width: 100%;
+        background-image: url(../../assets/img/in_top_bj.jpg);
+        height: 640px;
+        position: absolute;
+        z-index: 1;
+        filter: alpha(opacity=40);
+        -moz-opacity: 0.4;
+        -khtml-opacity: 0.4;
+        opacity: 0.4;
+    }
+</style>
+
+<body>
+    <div class="canvaszz"> </div>
+    <canvas id="canvas"></canvas>
+    <div class="container-fluid main">
+        <div class="row">
+
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 height300">
+                <div class="height33 borderBlue">
+                    <div class="bg"></div>
+                    <div class="content">
+                        <div class="inline-block text-center">
+                            机器部署概要
+                        </div>
+                    </div>
+                </div>
+                <div class="height33 borderBlue">
+                    <div class="bg"></div>
+                    <div class="content">
+                        <div class="inline-block text-center">
+                            机器部署概要
+                        </div>
+                    </div>
+                </div>
+                <div class="height33 borderBlue">
+                    <div class="bg"></div>
+                    <div class="content">
+                        <div class="inline-block text-center">
+                            机器部署概要
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 borderBlue height300">
+                <div class="ball">
+                    <div class="ball-cube">
+                        <div class="x1"></div>
+                        <div class="x2"></div>
+                        <div class="x3"></div>
+                        <div class="x4"></div>
+                        <div class="x5"></div>
+                        <div class="x6"></div>
+                        <div class="x7"></div>
+                        <div class="x8"></div>
+                        <div class="x9"></div>
+                        <div class="y1"></div>
+                        <div class="y2"></div>
+                        <div class="y3"></div>
+                        <div class="y4"></div>
+                        <div class="y5"></div>
+                        <div class="y6"></div>
+                        <div class="y7"></div>
+                        <div class="y8"></div>
+                        <div class="y9"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 borderBlue height300">
+                <div class="bg"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    //宇宙特效
+    "use strict";
+    var canvas = document.getElementById('canvas'),
+        ctx = canvas.getContext('2d'),
+        w = canvas.width = window.innerWidth,
+        h = canvas.height = window.innerHeight,
+
+        hue = 217,
+        stars = [],
+        count = 0,
+        maxStars = 1300; //星星数量
+
+    var canvas2 = document.createElement('canvas'),
+        ctx2 = canvas2.getContext('2d');
+    canvas2.width = 100;
+    canvas2.height = 100;
+    var half = canvas2.width / 2,
+        gradient2 = ctx2.createRadialGradient(half, half, 0, half, half, half);
+    gradient2.addColorStop(0.025, '#CCC');
+    gradient2.addColorStop(0.1, 'hsl(' + hue + ', 61%, 33%)');
+    gradient2.addColorStop(0.25, 'hsl(' + hue + ', 64%, 6%)');
+    gradient2.addColorStop(1, 'transparent');
+
+    ctx2.fillStyle = gradient2;
+    ctx2.beginPath();
+    ctx2.arc(half, half, half, 0, Math.PI * 2);
+    ctx2.fill();
+
+    // End cache
+
+    function random(min, max) {
+        if (arguments.length < 2) {
+            max = min;
+            min = 0;
+        }
+
+        if (min > max) {
+            var hold = max;
+            max = min;
+            min = hold;
+        }
+
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function maxOrbit(x, y) {
+        var max = Math.max(x, y),
+            diameter = Math.round(Math.sqrt(max * max + max * max));
+        return diameter / 2;
+        //星星移动范围，值越大范围越小，
+    }
+
+    var Star = function() {
+
+        this.orbitRadius = random(maxOrbit(w, h));
+        this.radius = random(60, this.orbitRadius) / 8;
+        //星星大小
+        this.orbitX = w / 2;
+        this.orbitY = h / 2;
+        this.timePassed = random(0, maxStars);
+        // 移动速度 50000
+        this.speed = random(this.orbitRadius) / 500000;
+        //星星移动速度
+        this.alpha = random(2, 10) / 10;
+
+        count++;
+        stars[count] = this;
+    }
+
+    Star.prototype.draw = function() {
+        var x = Math.sin(this.timePassed) * this.orbitRadius + this.orbitX,
+            y = Math.cos(this.timePassed) * this.orbitRadius + this.orbitY,
+            twinkle = random(10);
+
+        if (twinkle === 1 && this.alpha > 0) {
+            this.alpha -= 0.05;
+        } else if (twinkle === 2 && this.alpha < 1) {
+            this.alpha += 0.05;
+        }
+
+        ctx.globalAlpha = this.alpha;
+        ctx.drawImage(canvas2, x - this.radius / 2, y - this.radius / 2, this.radius, this.radius);
+        this.timePassed += this.speed;
+    }
+
+    for (var i = 0; i < maxStars; i++) {
+        new Star();
+    }
+
+    function animation() {
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.globalAlpha = 0.5; //尾巴
+        ctx.fillStyle = 'hsla(' + hue + ', 64%, 6%, 2)';
+        ctx.fillRect(0, 0, w, h)
+
+        ctx.globalCompositeOperation = 'lighter';
+        for (var i = 1, l = stars.length; i < l; i++) {
+            stars[i].draw();
+            // console.log(stars)
+        };
+
+        window.requestAnimationFrame(animation);
+    }
+
+    animation();
+</script>
+
+
+</html>
