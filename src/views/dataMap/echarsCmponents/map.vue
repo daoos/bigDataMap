@@ -590,7 +590,9 @@ export default {
           }
         })
         .catch(err => {
-          self.MainMapOption.series[0].data = [];
+          if(self.MainMapOption.series[0]!=undefined){
+            self.MainMapOption.series[0].data = [];
+          }
           this.$notify.warning({
             title: "提示",
             message: "该地区没有部署服务器！请选择有标注坐标点的位置"
