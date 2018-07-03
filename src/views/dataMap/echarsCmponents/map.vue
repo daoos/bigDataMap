@@ -1,7 +1,7 @@
 <template>
   <!-- <div class="row" id="MainMapContainer" style="height:60vh;width:50vw"> -->
   <div class="row" id="MainMapContainer">
-    <div id="MainMap" style="height:100vh;width:100vw;left: -50%;top: -70px;"></div>
+    <div id="MainMap" class="mainMap" style="height:100vh;width:100vw;top: -70px;"></div>
     <!-- <iframe style="width:100%;height:100%" src="./static/DataWeb/hainanzfzyxycm.html" frameborder="0"></iframe> -->
   </div>
 </template>
@@ -173,7 +173,7 @@ export default {
           show: true,
           left: "72%",
           top: "150px",
-          zlevel:10000,
+          zlevel: 10000,
           feature: {
             mark: { show: true },
             myTool1: {
@@ -188,12 +188,12 @@ export default {
               icon: echartBtns.backPng,
               onclick() {}
             },
-            // myTool3: {
-            //   show: true,
-            //   title: "全屏",
-            //   icon: echartBtns.FullScreenPng,
-            //   onclick() {}
-            // }
+            myTool3: {
+              show: true,
+              title: "全屏",
+              icon: echartBtns.FullScreenPng,
+              onclick() {}
+            }
           }
         },
         tooltip: {
@@ -318,7 +318,7 @@ export default {
                   backgroundColor: "rgba(0,23,11,0)"
                 }
               }
-            },
+            }
             // light: {
             //   //光照阴影
             //   main: {
@@ -397,14 +397,15 @@ export default {
         self.$router.push(self.$route.meta.path + nextMap);
         // self.$router.push("/dataMap/中国");
       };
-      // this.MainMapOption.toolbox.feature.myTool3.onclick = function() {
-      //   $(".left").toggleClass("fadeOutLeft");
-      //   $(".right").toggleClass("fadeOutRight");
-      //   $(".bottom").toggleClass("fadeOutDown");
-      //   $(".center").toggleClass("width100height100 bounceIn");
+      this.MainMapOption.toolbox.feature.myTool3.onclick = function() {
+        $(".left").toggleClass("fadeOutLeft");
+        $(".right").toggleClass("fadeOutRight");
+        $(".bottom").toggleClass("fadeOutDown");
+        $(".center").toggleClass("width100height100 bounceIn");
+        $("#MainMap").toggleClass("mainMap");
 
-      //   self.MainMapDom.resize();
-      // };
+        self.MainMapDom.resize();
+      };
       this.MainMapOption.toolbox.feature.myTool1.onclick = function() {
         var opt = self.MainMapOption,
           seriesData = opt.series[0].data;
@@ -461,8 +462,6 @@ export default {
           data.dblist[i].markX,
           data.dblist[i].markY
         ];
-        // console.log(data.dblist[i].MarkEZInfo.count)
-        // if (data.dblist[i].MarkEZInfo.count > 0) {
         var tmpnode = {
           id: data.dblist[i].MarkEZInfo.id,
           cid: data.dblist[i].MarkEZInfo.cid,
@@ -590,7 +589,7 @@ export default {
           }
         })
         .catch(err => {
-          if(self.MainMapOption.series[0]!=undefined){
+          if (self.MainMapOption.series[0] != undefined) {
             self.MainMapOption.series[0].data = [];
           }
           this.$notify.warning({
@@ -693,4 +692,10 @@ export default {
   }
 };
 </script>
+<style scoped>
+.mainMap {
+  left: -50%;
+}
+</style>
+
 
