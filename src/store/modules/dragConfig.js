@@ -11,52 +11,18 @@ const state = {
     left1: 'termTypeRadio',
     left2: 'dateTermBroken',
     dragConfigData: {
-        // left1: 'termTypeRadio',
-        // left2: 'dateTermBroken',
-        // right1: 'appUseRanking',
-        // right2: 'userActivity',
-        // bottom1:'cityTermRanking',
-        // bottom2:'horLineEchart',
-        // bottom3:'domainEchart',
-        // bottom4:'serviceWorkingNum',
-        // center1:'MainMap',
-        // terminals:'terminals',
-
-        //product
-        // left1: 'termTypeRadio',
-        // left2: 'productType',
-        // right1: 'appUseRanking',
-        // right2: 'userActivity',
-        // bottom1: 'terminalTypeStatistics',
-        // bottom2: 'dateTermBroken',
-        // bottom3: 'customType',
-        // bottom4: 'cityTermRanking',
-        // center1: 'MainMap',
-        // terminals: 'terminals'
 
         // 教育
-        // left1: 'ExtracurricularActivities',
-        // left2: 'StudentExamination',
-        // right1: 'ConsumingOfHomework',
-        // right2: 'AnnualLocalEntranceExamination',
-        // bottom1:'StructureOfStudentEnrollment',
-        // bottom2:'BottomChart6',
-        // bottom3:'BottomChart11',
-        // bottom4:'BottomChart8',
-        // center1:'BottomChart9',
-        // terminals:'BottomChart11',
-
-        // 医疗
-        left1: 'ReceptionOfLoopRatio',
-        left2: 'MedicalExpensePayment',
-        right1: 'OneWeekEmergencyResponse',
-        right2: 'Top5WasHospitalizedLastMonth',
-        bottom1:'IncidenceOfSpecialDiseaseArea',
-        bottom2:'AgeIncidenceOfSpecialDisease',
-        bottom3:'OneYearCommonDisease',
-        bottom4:'HospitalizationRatio',
+        left1: 'ExtracurricularActivities',
+        left2: 'StudentExamination',
+        right1: 'ConsumingOfHomework',
+        right2: 'AnnualLocalEntranceExamination',
+        bottom1:'StructureOfStudentEnrollment',
+        bottom2:'BottomChart6',
+        bottom3:'BottomChart11',
+        bottom4:'BottomChart8',
         center1:'BottomChart9',
-        terminals:'BottomChart11'
+        terminals:'BottomChart11',
     }
 
 }

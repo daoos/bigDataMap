@@ -29,26 +29,16 @@
         </header>
         <div style="width:80vw;height:50vh;margin:12vh auto;margin-top:12vh">
 
-            <term-type v-if="echartType === 'termTypeRadio'"></term-type>
-            <dateterm-broken v-else-if="echartType === 'dateTermBroken'"></dateterm-broken>
-            <app-use-ranking v-else-if="echartType === 'appUseRanking'"></app-use-ranking>
-            <user-activity v-else-if="echartType === 'userActivity'"></user-activity>
-            <city-term-ranking v-else-if="echartType === 'cityTermRanking'"></city-term-ranking>
-            <domain-echart v-else-if="echartType === 'domainEchart'"></domain-echart>
-            <product-type v-else-if="echartType === 'productType'"></product-type>
-            <terminal-type-statistics v-else-if="echartType === 'terminalTypeStatistics'"></terminal-type-statistics>
-            <terminals v-else-if="echartType === 'terminals'"></terminals>
-            <custom-type v-else-if="echartType === 'customType'"></custom-type>
-
-            <!-- 医疗数据 -->
-            <reception-of-loopRatio v-else-if="echartType === 'ReceptionOfLoopRatio'"></reception-of-loopRatio>
-            <medical-expense-payment v-else-if="echartType === 'MedicalExpensePayment'"></medical-expense-payment>
-            <one-week-emergency-response v-else-if="echartType === 'OneWeekEmergencyResponse'"></one-week-emergency-response>
-            <top5-was-hospitalized-last-month v-else-if="echartType === 'Top5WasHospitalizedLastMonth'"></top5-was-hospitalized-last-month>
-            <incidence-of-special-disease-area v-else-if="echartType === 'IncidenceOfSpecialDiseaseArea'"></incidence-of-special-disease-area>
-            <age-incidence-of-special-disease v-else-if="echartType === 'AgeIncidenceOfSpecialDisease'"></age-incidence-of-special-disease>
-            <one-year-common-disease v-else-if="echartType === 'OneYearCommonDisease'"></one-year-common-disease>
-            <hospitalization-ratio v-else-if="echartType === 'HospitalizationRatio'"></hospitalization-ratio>
+            <extracurricular-activities v-if="echartType === 'ExtracurricularActivities'"></extracurricular-activities>
+            <student-examination v-else-if="echartType === 'StudentExamination'"></student-examination>
+            <consuming-of-homework v-else-if="echartType === 'ConsumingOfHomework'"></consuming-of-homework>
+            <annual-local-entrance-examination v-else-if="echartType === 'AnnualLocalEntranceExamination'"></annual-local-entrance-examination>
+            <structure-ofStudent-enrollment v-else-if="echartType === 'StructureOfStudentEnrollment'"></structure-ofStudent-enrollment>
+            <bottom-chart6 v-else-if="echartType === 'BottomChart6'"></bottom-chart6>
+            <bottom-chart11 v-else-if="echartType === 'BottomChart11'"></bottom-chart11>
+            <bottom-chart8 v-else-if="echartType === 'BottomChart8'"></bottom-chart8>
+            <bottom-chart9 v-else-if="echartType === 'BottomChart9'"></bottom-chart9>
+            <bottom-chart11 v-else-if="echartType === 'BottomChart11'"></bottom-chart11>
 
             <div v-else>
                 页面不存在
@@ -71,17 +61,16 @@ import {
   CustomType
 } from "./echarsCmponents/index";
 
-// 引入医疗的数据
 import {
-  ReceptionOfLoopRatio,
-  MedicalExpensePayment,
-  OneWeekEmergencyResponse,
-  Top5WasHospitalizedLastMonth,
-  IncidenceOfSpecialDiseaseArea,
-  AgeIncidenceOfSpecialDisease,
-  OneYearCommonDisease,
-  HospitalizationRatio
-} from "./hospital/index";
+  ExtracurricularActivities,
+  StudentExamination,
+  ConsumingOfHomework,
+  AnnualLocalEntranceExamination,
+  StructureOfStudentEnrollment,
+  BottomChart6,
+  BottomChart11,
+  BottomChart9
+} from "./education/index.js";
 
 import { cityMap } from "static/echarts/city-map.js";
 
@@ -98,15 +87,15 @@ export default {
     Terminals,
     CustomType,
 
-    // 医疗
-    ReceptionOfLoopRatio,
-    MedicalExpensePayment,
-    OneWeekEmergencyResponse,
-    Top5WasHospitalizedLastMonth,
-    IncidenceOfSpecialDiseaseArea,
-    AgeIncidenceOfSpecialDisease,
-    OneYearCommonDisease,
-    HospitalizationRatio
+    // 教育
+    ExtracurricularActivities,
+    StudentExamination,
+    ConsumingOfHomework,
+    AnnualLocalEntranceExamination,
+    StructureOfStudentEnrollment,
+    BottomChart6,
+    BottomChart11,
+    BottomChart9
   },
   data() {
     return {
