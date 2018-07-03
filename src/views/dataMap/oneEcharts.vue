@@ -28,20 +28,8 @@
             </h2>
         </header>
         <div style="width:80vw;height:50vh;margin:12vh auto;margin-top:12vh">
-
-            <term-type v-if="echartType === 'termTypeRadio'"></term-type>
-            <dateterm-broken v-else-if="echartType === 'dateTermBroken'"></dateterm-broken>
-            <app-use-ranking v-else-if="echartType === 'appUseRanking'"></app-use-ranking>
-            <user-activity v-else-if="echartType === 'userActivity'"></user-activity>
-            <city-term-ranking v-else-if="echartType === 'cityTermRanking'"></city-term-ranking>
-            <domain-echart v-else-if="echartType === 'domainEchart'"></domain-echart>
-            <product-type v-else-if="echartType === 'productType'"></product-type>
-            <terminal-type-statistics v-else-if="echartType === 'terminalTypeStatistics'"></terminal-type-statistics>
-            <terminals v-else-if="echartType === 'terminals'"></terminals>
-            <custom-type v-else-if="echartType === 'customType'"></custom-type>
-
             <!-- 医疗数据 -->
-            <reception-of-loopRatio v-else-if="echartType === 'ReceptionOfLoopRatio'"></reception-of-loopRatio>
+            <reception-of-loopRatio v-if="echartType === 'ReceptionOfLoopRatio'"></reception-of-loopRatio>
             <medical-expense-payment v-else-if="echartType === 'MedicalExpensePayment'"></medical-expense-payment>
             <one-week-emergency-response v-else-if="echartType === 'OneWeekEmergencyResponse'"></one-week-emergency-response>
             <top5-was-hospitalized-last-month v-else-if="echartType === 'Top5WasHospitalizedLastMonth'"></top5-was-hospitalized-last-month>
@@ -58,19 +46,6 @@
     </div>
 </template>
 <script>
-import {
-  TermType,
-  DatetermBroken,
-  AppUseRanking,
-  UserActivity,
-  CityTermRanking,
-  DomainEchart,
-  ProductType,
-  TerminalTypeStatistics,
-  Terminals,
-  CustomType
-} from "./echarsCmponents/index";
-
 // 引入医疗的数据
 import {
   ReceptionOfLoopRatio,
@@ -87,16 +62,6 @@ import { cityMap } from "static/echarts/city-map.js";
 
 export default {
   components: {
-    TermType,
-    DatetermBroken,
-    AppUseRanking,
-    UserActivity,
-    CityTermRanking,
-    DomainEchart,
-    ProductType,
-    TerminalTypeStatistics,
-    Terminals,
-    CustomType,
 
     // 医疗
     ReceptionOfLoopRatio,
