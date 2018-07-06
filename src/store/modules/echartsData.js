@@ -40,7 +40,7 @@ const state = {
         canvasBg: sessionStorage.getItem('canvasBg') || "0",
         brightness:(sessionStorage.getItem('brightness') || 30),
         pageStyle:(sessionStorage.getItem('pageStyle') || ''),
-        // 1 蓝色背景 2 视屏背景 3 星空北京
+        // 1 蓝色背景 2 视屏背景 3 星空 4 医疗
         bgStyle:(sessionStorage.getItem('bgStyle') || '1'),
         // 1.显示四角边框
         echartsContainer: sessionStorage.getItem('echartsContainer') || '1',

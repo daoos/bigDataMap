@@ -3,6 +3,7 @@
 
     <div class="background">
       <video :class="{'none':settingConfig.bgStyle!='2'}" id="bgVideo" @load="palyVideo" loop preload src='~@/assets/mv/mov.mp4'></video>
+      <video :class="{'none':settingConfig.bgStyle!='4'}" id="bgVideo2" @load="palyVideo" loop preload src='~@/assets/mv/hospital.mp4'></video>
     </div>
     <div :class="{'none':settingConfig.bgStyle!='2'}" class="bgMirror" :style="{'opacity':parseInt(settingConfig.brightness+40)/100}"></div>
     <!-- </div>-->
@@ -103,7 +104,8 @@
         <el-form :model="settingConfig">
           <el-form-item :label="$t('themeSetting.labelBg')" :label-width="formLabelWidth">
             <el-radio v-model="settingConfig.bgStyle" label="1">蓝色</el-radio>
-            <el-radio v-model="settingConfig.bgStyle" label="2">视频</el-radio>
+            <el-radio v-model="settingConfig.bgStyle" label="2">地球</el-radio>
+            <el-radio v-model="settingConfig.bgStyle" label="4">医疗</el-radio>
             <el-radio v-model="settingConfig.bgStyle" label="3">星空</el-radio>
           </el-form-item>
           <!--<el-form-item :label="$t('themeSetting.pageStyle')" :label-width="formLabelWidth">
@@ -205,14 +207,16 @@ export default {
     palyVideo() {
       if (
         this.settingConfig.video == "1" ||
-        this.settingConfig.bgStyle == "2"
+        this.settingConfig.bgStyle == "2"||this.settingConfig.bgStyle == "4"
       ) {
         setTimeout(function() {
           document.getElementById("bgVideo").play();
+          document.getElementById("bgVideo2").play();
         }, 1000);
         // document.getElementById("bgVideo").play();
       } else {
         document.getElementById("bgVideo").pause();
+        document.getElementById("bgVideo2").pause();
       }
     },
     refresh() {
@@ -260,13 +264,15 @@ export default {
       // this.canvasBg("starts", 230, 2000, 60, 2, 500000, 1,'#021637');
       if (
         this.settingConfig.video == "1" ||
-        this.settingConfig.bgStyle == "2"
+        this.settingConfig.bgStyle == "2"||this.settingConfig.bgStyle == "4"
       ) {
         setTimeout(function() {
           document.getElementById("bgVideo").play();
+          document.getElementById("bgVideo2").play();
         }, 1000);
       } else {
         document.getElementById("bgVideo").pause();
+        document.getElementById("bgVideo2").pause();
       }
     });
   },
@@ -281,10 +287,12 @@ export default {
     },
     settingConfig: {
       handler(val, oldVal) {
-        if (val.video == "1" || val.bgStyle == "2") {
+        if (val.video == "1" || val.bgStyle == "2"|| val.bgStyle == "4") {
           document.getElementById("bgVideo").play();
+          document.getElementById("bgVideo2").play();
         } else {
           document.getElementById("bgVideo").pause();
+          document.getElementById("bgVideo2").pause();
         }
         console.log(val);
         sessionStorage.setItem("video", val.video);
