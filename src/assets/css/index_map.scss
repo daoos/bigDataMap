@@ -620,7 +620,7 @@ table.imagetable td {
 
 #fullScreenContainer {
     position: fixed;
-    z-index: 10;
+    z-index: 99999999;
     top: 0;
     background: #dfdfdf;
     opacity: 0.9;
