@@ -19,7 +19,7 @@ function GetRandomNum(Min, Max) {
     return (Min + Math.round(Rand * Range));
 }
 
-isFileRequest = true
+// isFileRequest = true
 
 export function getMapJson(curentCityCode) {
     // //离线
