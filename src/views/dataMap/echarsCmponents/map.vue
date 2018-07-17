@@ -69,12 +69,12 @@ function ShowMarkTip(params, ticket, callback) {
     // "<img src='" + hostUrl + markEZinfoList[markID].photo_url + "'/>";
     DivShow += "<p>联系方式 " + markEZinfoList[markID].admin_contact + "</p>";
     DivShow += "<p>管理员 " + markEZinfoList[markID].admin_name + "</p>";
-    DivShow += "<p>照片:</p>";
+    // DivShow += "<p>照片:</p>";
 
-    DivShow +=
-      "<img style='max-width:150px;max-height:150px;padding-left:50px' src='//" +
-      markEZinfoList[markID].photo_url +
-      "'/>";
+    // DivShow +=
+    //   "<img style='max-width:150px;max-height:150px;padding-left:50px' src='//" +
+    //   markEZinfoList[markID].photo_url +
+    //   "'/>";
     DivShow += "</div>";
     DivShow += "</div>";
     //  setTimeout( function () {
