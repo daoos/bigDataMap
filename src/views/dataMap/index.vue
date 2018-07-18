@@ -235,7 +235,7 @@ export default {
       this.dialogFormVisible = false;
       if (
         this.settingConfig.apiUrl != sessionStorage.apiUrl
-        // "http://127.0.0.1:8080/DataServer/MapAjaxInfoServlet.do"
+        // "http://127.0.0.1:8080/dataquery/MapAjaxInfoServlet.do"
       ) {
         sessionStorage.setItem("apiUrl", this.settingConfig.apiUrl);
         window.location.reload();

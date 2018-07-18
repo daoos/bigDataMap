@@ -13,7 +13,8 @@ export default {
   created(){
     //获取路由参数 
     var svgMapId = this.$route.params.svgMapId
-    this.iframeUrl = './static/DataWeb/hainanzfzyxy1.html?id='+svgMapId
+    this.iframeUrl = './static/DataWeb/hainanzfzyxy.html?id='+svgMapId
+    // this.iframeUrl = './static/DataWeb/hainanzfzyxy1.html?id='+svgMapId
   }
 };
 </script>

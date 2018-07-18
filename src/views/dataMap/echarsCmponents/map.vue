@@ -54,27 +54,49 @@ function ShowMarkTip(params, ticket, callback) {
     var DivShow =
       "<div class='DivShow' style='width: auto;height: auto;padding: 20px 30px;'>";
     DivShow += "<div>";
-    DivShow += "<p>显示名称 " + markEZinfoList[markID].name + "</p>";
-    //DivShow += "<p>跳转网址 "+ markEZinfoList[ markID  ].url +"</p>";
-    DivShow +=
-      "<p>在线终端数 " + markEZinfoList[markID].online_workstation_num + "</p>";
-    //DivShow += "<p>是否在线 "+ markEZinfoList[ markID  ].json_zt +"</p>";
-    DivShow += "<p>地址 " + markEZinfoList[markID].location + "</p>";
-    DivShow +=
-      "<p>终端总数 " + markEZinfoList[markID].total_workstation_num + "</p>";
-    //DivShow += "<p>坐标 "+ markEZinfoList[ markID  ].coordinate +"</p>";
-    DivShow +=
-      "<p>在线服务器数 " + markEZinfoList[markID].online_server_num + "</p>";
+    if (markEZinfoList[markID].name != -1) {
+      DivShow += "<p>显示名称 " + markEZinfoList[markID].name + "</p>";
+      //DivShow += "<p>跳转网址 "+ markEZinfoList[ markID  ].url +"</p>";
+    }
 
-    // "<img src='" + hostUrl + markEZinfoList[markID].photo_url + "'/>";
-    DivShow += "<p>联系方式 " + markEZinfoList[markID].admin_contact + "</p>";
-    DivShow += "<p>管理员 " + markEZinfoList[markID].admin_name + "</p>";
-    DivShow += "<p>照片:</p>";
+    if (markEZinfoList[markID].online_workstation_num != -1) {
+      DivShow +=
+        "<p>在线终端数 " +
+        markEZinfoList[markID].online_workstation_num +
+        "</p>";
+      //DivShow += "<p>是否在线 "+ markEZinfoList[ markID  ].json_zt +"</p>";
+    }
+    if (markEZinfoList[markID].location != -1) {
+      DivShow += "<p>地址 " + markEZinfoList[markID].location + "</p>";
+    }
 
-    DivShow +=
-      "<img style='max-width:150px;max-height:150px;padding-left:50px' src='//" +
-      markEZinfoList[markID].photo_url +
-      "'/>";
+    if (markEZinfoList[markID].total_workstation_num != -1) {
+      DivShow +=
+        "<p>终端总数 " + markEZinfoList[markID].total_workstation_num + "</p>";
+      //DivShow += "<p>坐标 "+ markEZinfoList[ markID  ].coordinate +"</p>";
+    }
+
+    if (markEZinfoList[markID].online_server_num != -1) {
+      DivShow +=
+        "<p>在线服务器数 " + markEZinfoList[markID].online_server_num + "</p>";
+    }
+
+    if (markEZinfoList[markID].admin_contact != -1) {
+      // "<img src='" + hostUrl + markEZinfoList[markID].photo_url + "'/>";
+      DivShow += "<p>联系方式 " + markEZinfoList[markID].admin_contact + "</p>";
+    }
+    if (markEZinfoList[markID].admin_name != -1) {
+      DivShow += "<p>管理员 " + markEZinfoList[markID].admin_name + "</p>";
+    }
+    if (markEZinfoList[markID].photo_url != -1) {
+      DivShow += "<p>照片:</p>";
+
+      DivShow +=
+        "<img style='max-width:150px;max-height:150px;padding-left:50px' src='//" +
+        markEZinfoList[markID].photo_url +
+        "'/>";
+    }
+
     DivShow += "</div>";
     DivShow += "</div>";
     //  setTimeout( function () {
@@ -361,6 +383,32 @@ export default {
   computed: {
     ...mapGetters(["loadingConfig", "mapData", "settingConfig"])
   },
+  created(){
+    if(sessionStorage.getItem('video')==null){
+      sessionStorage.setItem('video',"0")
+    }
+    if(sessionStorage.getItem('canvasBg')==null){
+      sessionStorage.setItem('canvasBg',"0")
+    }
+    if(sessionStorage.getItem('brightness')==null){
+      sessionStorage.setItem('brightness',"30")
+    }
+    if(sessionStorage.getItem('pageStyle')==null){
+      sessionStorage.setItem('pageStyle',"")
+    }
+    if(sessionStorage.getItem('bgStyle')==null){
+      sessionStorage.setItem('bgStyle',"1")
+    }
+    if(sessionStorage.getItem('echartType')==null){
+      sessionStorage.setItem('echartType',"1")
+    }
+    if(sessionStorage.getItem('echartsContainer')==null){
+      sessionStorage.setItem('echartsContainer',"1")
+    }
+    if(sessionStorage.getItem('apiUrl')==null){
+      sessionStorage.setItem('apiUrl','http://' + window.location.host + '/dataquery/MapAjaxInfoServlet.do')
+    }
+  },
   mounted() {
     let self = this;
     this.$nextTick(function() {
@@ -413,19 +461,23 @@ export default {
         var table =
           '<table class="imagetable" id="userActivityTable" style="width:100%;text-align:center;color: black;overflow: scroll"><tbody style="overflow: scroll"><tr>' +
           "<th>城市名称</th>" +
-          "<th>管理员</th>" +
+          "<th class='admin_name'>管理员</th>" +
           "<th>总终端数</th>" +
           "<th>在线终端</th>" +
-          "<th>在线服务</th>" +
+          "<th class='online_server_num'>在线服务</th>" +
           "</tr>";
+          var isCity =  false
         for (var i = 0, l = series.length; i < l; i++) {
           var markKey = series[i].value[2];
+          if(markEZinfoList[markKey]["admin_name"]==-1){
+              isCity =  true
+          }
           table +=
             "<tr>" +
             "<td>" +
             series[i]["name"] +
             "</td>" +
-            "<td>" +
+            "<td class='admin_name'>" +
             markEZinfoList[markKey]["admin_name"] +
             "</td>" +
             "<td>" +
@@ -434,7 +486,7 @@ export default {
             "<td>" +
             markEZinfoList[markKey]["online_workstation_num"] +
             "</td>" +
-            "<td>" +
+            "<td class='online_server_num'>" +
             markEZinfoList[markKey]["online_server_num"] +
             "</td>";
         }
@@ -442,6 +494,9 @@ export default {
 
         $(".modal-body").html(table);
         $("#myModal").modal();
+        if(isCity){
+          $(".admin_name").hide();$(".online_server_num").hide()
+        }
       };
     });
   },

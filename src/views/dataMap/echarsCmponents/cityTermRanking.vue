@@ -76,16 +76,7 @@ export default {
           {
             type: "category",
             data: [
-              "北京",
-              "上海",
-              "武汉",
-              "成都",
-              "广州",
-              "北京1",
-              "上海1",
-              "武汉1",
-              "成都1",
-              "广州1"
+              
             ],
             axisLine: {
               show: true,

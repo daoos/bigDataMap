@@ -1,7 +1,7 @@
 import axios from "axios";
 import qs from "qs";
 
-var apiUrl = 'http://'+ window.location.host + '/DataServer/MapAjaxInfoServlet.do';
+var apiUrl = 'http://'+ window.location.host + '/dataquery/MapAjaxInfoServlet.do';
 
 if(sessionStorage.getItem('apiUrl')){
     apiUrl = sessionStorage.getItem('apiUrl')

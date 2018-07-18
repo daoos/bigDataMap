@@ -14,9 +14,9 @@ module.exports = {
         proxyTable: {
             '/static/': {
                 // target: 'http://192.168.50.179:7777/DataMapManager/MapAjaxInfoServlet.do',
-                // target: 'http://192.168.50.179:8080/DataServer/countSystem.do',
-                // target: 'http://192.168.50.143:8181/DataServer/MapAjaxInfoServlet.do',
-                target: 'http://192.168.50.145:8282/DataServer/MapAjaxInfoServlet.do',
+                // target: 'http://192.168.50.179:8080/dataquery/countSystem.do',
+                // target: 'http://192.168.50.143:8181/dataquery/MapAjaxInfoServlet.do',
+                target: 'http://192.168.50.145:8282/dataquery/MapAjaxInfoServlet.do',
                 changeOrigin: true,
                 pathRewrite: {
                     '^/static/': '',

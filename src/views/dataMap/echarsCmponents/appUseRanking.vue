@@ -91,16 +91,7 @@ export default {
           {
             type: "category",
             data: [
-              "WORD",
-              "WORD1",
-              "WORD2",
-              "WORD3",
-              "WORD4",
-              "WORD5",
-              "WORD6",
-              "WORD6",
-              "WORD7",
-              "WORD8"
+              
             ],
             axisLine: {
               show: true,
@@ -108,12 +99,8 @@ export default {
                 color: theme.fontColor
               }
             },
-            axisLabel: {
-              formatter: "{value}",
-              textStyle: {
-                color: "#fff",
-                fontSize: 10
-              }
+            splitLine: {
+              show: false
             },
             axisPointer: {
               type: "shadow"
@@ -125,11 +112,6 @@ export default {
             type: "bar",
             itemStyle: {
               normal: {
-                // barBorderRadius: 7,
-                // color: this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [
-                //   { offset: 0, color: "#3977E6" },
-                //   { offset: 1, color: "#37BBF8" }
-                // ])
               }
             },
             data: [15, 39, 41, 49, 54, 64, 70, 76, 87, 99],
@@ -240,6 +222,7 @@ export default {
           ) {
             // xxdata.appUseRanking["result"].map(function(val) {
             xxdata.data["result"].map(function(val) {
+              console.log(val["appName"],val["userNum"])
               self.appUseRankingOption.yAxis[0].data.push(val["appName"]);
               self.appUseRankingOption.series[0].data.push(val["userNum"]);
             });
@@ -248,6 +231,7 @@ export default {
           } else {
             self.isError = true;
           }
+          console.log(self.appUseRankingOption)
           // this.init("appUseRanking", this.appUseRankingOption);
           myChart.setOption(this.appUseRankingOption);
           myChart.hideLoading();

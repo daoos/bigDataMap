@@ -44,7 +44,7 @@ const state = {
         bgStyle:(sessionStorage.getItem('bgStyle') || '1'),
         // 1.显示四角边框
         echartsContainer: sessionStorage.getItem('echartsContainer') || '1',
-        apiUrl: sessionStorage.getItem('apiUrl') || 'http://' + window.location.host + '/DataServer/MapAjaxInfoServlet.do',
+        apiUrl: sessionStorage.getItem('apiUrl') || 'http://' + window.location.host + '/dataquery/MapAjaxInfoServlet.do',
         echartType: (sessionStorage.getItem('echartType') || '1'),
     }
 

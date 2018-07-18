@@ -1,5 +1,5 @@
 <template>
-  <div class="echartsContainer" id="appUseRankingContainer">
+  <div class="echartsContainer" id="userActivityContainer">
     <span class="title_box" :class="{'visibilityNone':false}">{{$t('echartsTitle.UserActivity')}}</span>
     <div id="userActivity" :class="{'visibilityNone':isError}"></div>
     <span class="nodataMsg" :class="{'visibilityNone':!isError}">没有数据！</span>
@@ -87,23 +87,21 @@ export default {
         yAxis: [
           {
             type: "category",
-            data: [],
+            data: [
+              
+            ],
             axisLine: {
               show: true,
               lineStyle: {
                 color: theme.fontColor
               }
             },
-            axisLabel: {
-              formatter: "{value}",
-              textStyle: {
-                color: "#fff",
-                fontSize: 8
-              }
+            splitLine: {
+              show: false
             },
             axisPointer: {
               type: "shadow"
-            },
+            }
           }
         ],
         series: [
