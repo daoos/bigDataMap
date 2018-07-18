@@ -2279,8 +2279,9 @@
                             // alert(jsMap[param.name].url + "?xxID=" + param.value)
                             // window.location.reload("http://192.168.50.179:8080/#/dataMap/point/" + param.value)
                             // location.href =  "http://192.168.50.179:8080/#/dataMap/point/" + param.value;
-                            var urlArr = String(top.location.href).split('#')
-                            top.location.href = urlArr[0] + "/#/dataMap/point/15";
+							var urlArr = String(window.location.href).split('static')
+							console.log(urlArr)
+                            window.location.href = urlArr[0] + "index.html#/dataMap/point/15";
                         }
                     }
 
