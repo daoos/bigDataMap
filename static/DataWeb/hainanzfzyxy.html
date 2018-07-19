@@ -33,10 +33,10 @@
             background-size: 100% 100%;
             overflow: hidden;
         }
-        #hzxyMap{
+        /* #hzxyMap{
             width: 100vw;
             height: 100vh;
-        }
+        } */
     </style>
     <style class="cp-pen-styles">
         #C360 {
@@ -423,7 +423,8 @@
                             // window.location.reload("http://192.168.50.179:8080/#/dataMap/point/" + param.value)
                             // location.href =  "http://192.168.50.179:8080/#/dataMap/point/" + param.value;
                             var urlArr = String(top.location.href).split('#')
-                            top.location.href = urlArr[0] + "/#/dataMap/point/15";
+                            // top.location.href = urlArr[0] + "/#/dataMap/point/15";
+                            top.location.href = urlArr[0] + "/#/dataMap/veruntable/15";
                         }
                     }
 
@@ -645,7 +646,7 @@
         setTimeout(function() {
 
             $('#C360').hide()
-        }, 5000);
+        }, 1000);
     </script>
 </body>
 

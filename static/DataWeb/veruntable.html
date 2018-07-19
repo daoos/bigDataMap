@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>校园桌面云 部署机房组织结构图</title>
+
+    <script src="asset/js/jquery-1.11.0.min.js"></script>
+    <script src="asset/js/jquery.jsonp.js"></script>
+
+    <link rel="stylesheet" href="asset/msgbox/toastr/toastr.css">
+    <link rel="stylesheet" href="asset/msgbox/showmessage.css">
+    <link rel="stylesheet" href="asset/css/index_map.css">
+    <script language='javascript' src='asset/msgbox/toastr/toastr.min.js'></script>
+    <script language='javascript' src='asset/msgbox/jBox.min.js'></script>
+    <script language='javascript' src="asset/msgbox/msgbox.js"></script>
+    <script language='javascript' src="asset/js/typewriting.min.js"></script>
+    <script src="build/dist/echarts.js"></script>
+
+    <script type="text/javascript">
+
+        var XXMainTree;
+        var XXMainTree_option;
+
+    </script>
+    <link rel="stylesheet" href="asset/css/animation.css">
+    <link rel="stylesheet" href="asset/css/mainzb.css"/>
+    <link rel="stylesheet" href="asset/css/gcstyle.css">
+    <script language='javascript'  src="./asset/js/gcscript.js"></script>
+
+    <style>
+        a{text-decoration:none;color:#00ff00;}
+        /* login */
+        body {
+            /*
+            background-color: #101010;
+            background-image: none !important;
+            */
+        }
+    </style>
+
+</head>
+<body>
+<!--<div class="Top_Div">-->
+    <!--<div class="TDTitle">和信云计算大中华区全景部署图</div>-->
+    <!--<div class="Tmenu"><a href="./hainanzfzyxy.html">[ 返回校园 ]</a></div>-->
+<!--</div>-->
+<header>
+    <h2><span class="tx"><b>和信大数据可视化分析</b></span></h2>
+</header>
+
+<div class="Main_Div">
+   <div id="MainTree">
+        <script type="text/javascript">
+
+            function nTooltip( params ,ticket ,callback ) {
+
+                //console.log( params );
+                //var name = params.name;
+                var rid =  params.value;
+
+                //GetMapData
+
+//                $.ajax( {
+//                    'contentType': "application/json; charset=utf-8",
+//                    'url': url_str,
+//                    'data': {
+//                        //seriesName:  name,
+//                        rid:  rid,
+//                        dtype:  'xxTreeTip'
+//                    },
+//                    'dataType': 'jsonp',
+//                    'jsonp': "jsonCallback",
+//                    'type': 'get',
+//                    'error': function( XMLHttpRequest, textStatus, errorThrown ){
+//                        callback(ticket, "<div class='DivShow'>Error: "+  XMLHttpRequest.status  +"</div>" );
+//                    },
+//                    'success': function( data ) {
+//                        console.log(data)
+//                        var DivShow = "<div class='DivShow'>";
+//                        DivShow += "<p>区域：</p>";
+//                        DivShow += "<p>部署：</p>";
+//                        DivShow += "<p>学校： </p>";
+//                        DivShow += "<p>服务器： </p>";
+//                        DivShow += "<p>教室：</p>";
+//                        DivShow += "<p>终端： </p>";
+//                        DivShow += "<hr>";
+//                        DivShow += "<div style='float: left'><p><img src='./image/avatar1.jpg' /></p></div>";
+//                        DivShow += "<div style='float: left;margin-left: 20px'>" ;
+//                        DivShow +=  "<p>联系方式：18627961658</p>";
+//                        DivShow +=  "<p>工作单位：国家安全局</p>";
+//                        DivShow +=  "<p>职务：剿匪总司令</p>";
+//
+//                        DivShow += "</div>";
+//                        setTimeout(
+//                                function() {
+//                                    callback(ticket, DivShow);
+//                                }
+//                        ,100);
+//
+//                    }
+//                } );
+                var data = {
+                    name: "一教学楼"
+                }
+                console.log(data)
+                var DivShow = "<div class='DivShow'>";
+                DivShow += "<p>区域："+data.name+"</p>";
+                DivShow += "<p>部署：</p>";
+                DivShow += "<p>学校： </p>";
+                DivShow += "<p>服务器： </p>";
+                DivShow += "<p>教室：</p>";
+                DivShow += "<p>终端： </p>";
+                DivShow += "<hr>";
+                DivShow += "<div style='float: left'><p><img src='./image/avatar.jpg' width='80px' height='80px'/></p></div>";
+                DivShow += "<div style='float: left;margin-left: 20px'>" ;
+                DivShow +=  "<p>联系方式：18627961658</p>";
+                DivShow +=  "<p>工作单位：湖北大学</p>";
+                DivShow +=  "<p>职务：教导主任</p>";
+
+                DivShow += "</div>";
+                setTimeout(
+                    function() {
+                        callback(ticket, DivShow);
+                    }
+                    ,100);
+
+
+
+                return 'loading';
+            }
+
+            // 使用
+            require(
+                    [
+                        'echarts',
+                        'echarts/chart/tree'
+                    ],
+                    function (ec) {
+
+                        XXMainTree = ec.init( document.getElementById('MainTree') );
+                        var ecConfig = require( 'echarts/config' );
+
+                        XXMainTree.on( ecConfig.EVENT.CLICK, function ( param ){
+                            //alert('Click  ' + param.value );
+                            //  location.href ="./jvpclist.html?jsID="+ param.value ;
+
+                            var urlArr = String(top.location.href).split('#')
+                            top.location.href = urlArr[0] + "/#/dataMap/point/15";
+
+                            //  location.href ="./jvpclist.html?jsID="+ param.value ;
+                        });
+
+                        XXMainTree_option = {
+//                            backgroundColor: 'rgba(0,0,0,0.65)',
+                            title: {
+                                show:false,
+                                text: '',
+                                subtext: '线、节点样式'
+                            },
+                            tooltip: {
+                                trigger: 'item',
+                               // formatter: '{b}',
+
+                                formatter:  function ( params ,ticket ,callback ) {
+                                    nTooltip(  params ,ticket ,callback );
+                                }
+
+                            },
+                            toolbox: {
+                                show: false,
+                                feature: {
+                                    mark: {show: true},
+                                    dataView: {show: true, readOnly: false},
+                                    restore: {show: true},
+                                    saveAsImage: {show: true}
+                                }
+                            },
+                            calculable: false,
+                            series: [
+                                {
+                                    name: '树图',
+                                    type: 'tree',
+                                    orient: 'horizontal',  // vertical horizontal
+                                    rootLocation: {x: 'center',y: 'center'}, // 根节点位置  {x: 100, y: 'center'}
+                                    nodePadding: 40,
+                                    symbol: 'circle',
+                                    symbolSize: 40,
+                                    itemStyle: {
+                                        normal: {
+                                            label: {
+                                                show: true,
+                                                position: 'bottom',
+                                                textStyle: {
+                                                    color: '#FFFFFF',
+                                                    fontSize: 15,
+                                                    //fontWeight: 'bolder'
+                                                }
+                                            },
+                                            lineStyle: {
+                                                color: '#FFFFFF',
+                                                width: 1,
+                                                type: 'curve' // 'curve'|'broken'|'solid'|'dotted'|'dashed'
+                                            }
+                                        },
+                                        emphasis: {
+                                            label: {
+                                                show: false
+                                            }
+                                        }
+                                    },
+                                    clickable:true,
+                                    roam: true,         //缩放
+                                    data: [
+                                        {
+                                            name: '海南政法职业技术学院',
+                                            value: 6,
+                                            symbolSize: [90, 90],
+                                            symbol: './image/x2.png',
+                                            children: [
+                                                {
+                                                    name: '数据载入中....',
+                                                    value: 4,
+                                                    symbol: './image/x3.png',
+                                                    symbolSize: [60, 60],
+
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        };
+
+                        XXMainTree.setOption(  XXMainTree_option );
+                    }
+            );
+
+
+        </script>
+   </div>
+</div>
+
+<div class="MainDiv_Right none">
+
+    <div id="bdata_l">
+        <p><img src="./xpic/hainanzf1.png" width="128" height="128"></p>
+        <p id="mAdder">中国 海南省 海南政法职业学院</p>
+        <p>学员总数：人</p>
+        <p>教职总数：人</p>
+        <p>电脑终端总数：台</p>
+        <p>云桌面：台</p>
+    </div>
+
+</div>
+
+
+<div class="Bottom_Div none">
+
+    <div class="BDiv_Title">
+        <div class="BOTTLText"><span></span></div>
+        <div class="BDTRButton"><a href="javascript:ShowHDDiv();">-</a></div>
+    </div>
+
+    <div class="BDiv_Body">
+
+        <ul>
+            <li>
+                <div class="BTableP">
+                    <table width="100%">
+                        <thead>
+                        <tr>
+                            <th width="20%">类型</th>
+                            <th width="60%">单位</th>
+                            <th width="20%">活动终端</th>
+                        </tr>
+                        </thead>
+                        <tbody  id="mdata_t1">
+                        <tr>
+                            <td>数据载入中...</td>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+
+            <li>
+                <div class="BTableP">
+                    <table width="100%">
+                        <thead>
+                        <tr>
+                            <th width="20%">服务器</th>
+                            <th width="50%">所属地区</th>
+                            <th width="15%">数据流出</th>
+                            <th width="15%">数据流入</th>
+                        </tr>
+                        </thead>
+                        <tbody id="mdata_t2">
+                        <tr>
+                            <td>数据载入中...</td>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+
+            <li>
+                <div id="earth" style="">
+                    <div class="radar">
+                        <div class="circle">
+                            <div class="h"></div>
+                            <div class="v"></div>
+                            <div class="scan"></div>
+                            <div class="dot dot1"></div>
+                            <div class="dot dot2"></div>
+                            <div class="dot dot3"></div>
+                            <div class="dot dot4"></div>
+                        </div>
+                        <div class="icon" style="display: none">
+                            <div class="hotspot"></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+
+<script> /* SCRIPTS */
+
+    var SHD = false;
+    var err_i = 1;
+
+    if(  getUrlParam("xxID") != null  ){
+
+        var xxID = getUrlParam("xxID");
+        //alert(  xxID  );
+
+        var update_tree = setInterval( function() {
+
+//            var url_str = "http://localhost:8080/getdata/GetData.jsp";
+//            $.jsonp({
+//
+//                'contentType': "application/json; charset=utf-8",
+//                'url': url_str,
+//                'data': {
+//                    dtype: 'XXMainTree_option',
+//                    xxID: xxID,
+//                },
+//               // 'dataType': 'jsonp',
+//               // 'jsonp': "jsonCallback",
+//                'dataType':"jsonp",
+//                'callbackParameter':"jsonCallback",
+//                'async':false,
+//                //'timeout':5000,
+//                'type': 'get',
+//                'error': function (XMLHttpRequest, textStatus, errorThrown ) {
+////                    ShowError();
+//                },
+//                'success': function (data) {
+//
+//                     XXMainTree_option.series[0].data[0] = data[0];
+//                     console.log(XXMainTree_option)
+//                     XXMainTree.setOption( XXMainTree_option, true );
+//                    console.log(XXMainTree_option)
+//                    clearInterval( update_tree );
+//                }
+//            });
+            var data = {
+                name: "一教学楼",
+                symbol: "./image/xx1.png",
+                symbolSize: 64,
+                value: 1,
+                children: [
+                    {
+                        name: "1111",
+                        symbol: "./image/xx1.png",
+                        symbolSize: 64,
+                        value: 2,
+                        children: [
+                            {
+                                name: "222222",
+                                symbol: "./image/xx1.png",
+                                symbolSize: 64,
+                                value: 3,
+
+//                                children: [
+//                                    {
+//                                        name: "444444",
+//                                        symbol: "./image/xx1.png",
+//                                        symbolSize: 64,
+//                                        value: 4
+//                                    }
+//                                ]
+                            },
+                            {
+                                name: "444444",
+                                symbol: "./image/xx1.png",
+                                symbolSize: 64,
+                                value: 4
+                            }
+                        ]
+                    }
+                ]
+            }
+            XXMainTree_option.series[0].data[0] = data;
+            XXMainTree.setOption(XXMainTree_option, true );
+//
+            clearInterval(update_tree);
+
+        }, 500 );
+    }
+
+    function ShowError(){
+        err_i++ ;
+        ShowMessage_T('无法获取数据','连接数据服务器失败，无法获取更新数据...',2);
+
+        if( err_i > 5 ){
+
+            //clearInterval( update_tree );
+        }
+    }
+
+
+    $(document).ready(function() {
+
+        var outinfo ="";
+        outinfo +="<p><img src='./xpic/hainanzf1.png' width='64' height='64'></p>";
+        outinfo +="<p id='mAdder'>中国 海南省 海南政法职业学院</p>";
+        outinfo +="<p>学员总数：人</p>";
+        outinfo +="<p>教职总数：人</p>";
+        outinfo +="<p>电脑终端总数：台</p>";
+        outinfo +="<p>云桌面：台</p>";
+
+        setTimeout(function () {
+            $('#bdata_l').typewriting( outinfo , {
+                "typing_interval": 100,
+                "blink_interval": "1s",
+                "cursor_color": "#00fd55"
+            }, function () {
+                console.log("END");
+            });
+
+        }, 500);
+    });
+
+
+    function GotoPage(){
+        location.href = './hainanzfzyxy.html'  ;
+    }
+
+</script>
+
+
+
+</body>
+</html>

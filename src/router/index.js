@@ -48,5 +48,7 @@ export default new Router({
 
         { path: '/loading', component: _import('utils/loading') },
         { path: '/refresh', component: _import('utils/goBack'), hidden: true },
+
+        { path: '/dataMap/veruntable/:veruntableId', name: 'veruntable',component: _import('dataMap/veruntable') },
     ]
 })
