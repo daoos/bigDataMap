@@ -28,6 +28,9 @@ export default {
         legend: {
           top: 10,
           height: 5,
+          textStyle:{
+            color:"#fff"
+          },
           data: ["wps", "excel", "ps", "word"]
         },
         toolbox: {

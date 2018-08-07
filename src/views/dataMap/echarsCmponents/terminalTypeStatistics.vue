@@ -54,6 +54,9 @@ export default {
           orient: "vertical",
           top: "10%",
           left: "5%",
+          textStyle:{
+            color:"#fff"
+          },
           data: [
             "Windows",
             "linux",

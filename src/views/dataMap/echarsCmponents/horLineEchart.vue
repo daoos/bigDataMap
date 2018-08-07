@@ -33,6 +33,9 @@ export default {
           show: true,
           top: 10,
           height: 5,
+          textStyle:{
+            color:"#fff"
+          },
           data: ["xshell", "xftp", "ie", "wps"]
         },
         toolbox: {

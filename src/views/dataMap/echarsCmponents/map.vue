@@ -118,15 +118,18 @@ function ShowMarkTip(params, ticket, callback) {
   $(document.body).append(DivShow);
   $(".DivShow").css({
     position: "absolute",
-    left: pagex + 70 + "px",
-    top: pagey - 120 + "px",
+    left: pagex +10+ "px",
+    top: pagey +10 + "px",
+    // left: pagex + 70 + "px",
+    // top: pagey - 120 + "px",
     padding: "10px 30px 10px 30px",
     backgroundColor: "rgba(119,129,145,.4)",
     color: "#fff",
     textAlign: "left",
     zIndex: 100000
   });
-  $(".DivShow").mouseout(function() {
+  // $(".DivShow").mouseout(function() {
+  $(".DivShow").mouseleave(function() {
     $(".DivShow").remove();
   });
 }
@@ -412,6 +415,9 @@ export default {
   mounted() {
     let self = this;
     this.$nextTick(function() {
+      $('body').on('click',function(){
+        $(".DivShow").remove();
+      })
       window.onresize = function() {
         self.MainMapDom.resize();
       };
