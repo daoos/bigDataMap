@@ -54,7 +54,6 @@
 
             function nTooltip( params ,ticket ,callback ) {
 
-                //console.log( params );
                 //var name = params.name;
                 var rid =  params.value;
 
@@ -102,14 +101,13 @@
                 var data = {
                     name: "一教学楼"
                 }
-                console.log(data)
                 var DivShow = "<div class='DivShow'>";
-                DivShow += "<p>区域："+data.name+"</p>";
+                DivShow += "<p>区域："+params[1]+"</p>";
                 DivShow += "<p>部署：</p>";
-                DivShow += "<p>学校： </p>";
-                DivShow += "<p>服务器： </p>";
-                DivShow += "<p>教室：</p>";
-                DivShow += "<p>终端： </p>";
+                DivShow += "<p>名称： "+params[1]+"</p>";
+                DivShow += "<p>服务器： 3台</p>";
+                DivShow += "<p>教室：教室（1）</p>";
+                DivShow += "<p>终端：35台 </p>";
                 DivShow += "<hr>";
                 DivShow += "<div style='float: left'><p><img src='./image/avatar.jpg' width='80px' height='80px'/></p></div>";
                 DivShow += "<div style='float: left;margin-left: 20px'>" ;
@@ -145,7 +143,7 @@
                             //  location.href ="./jvpclist.html?jsID="+ param.value ;
 
                             var urlArr = String(top.location.href).split('#')
-                            top.location.href = urlArr[0] + "/#/dataMap/point/15";
+                            top.location.href = urlArr[0] + "#/dataMap/point/15";
 
                             //  location.href ="./jvpclist.html?jsID="+ param.value ;
                         });
@@ -242,14 +240,7 @@
 
 <div class="MainDiv_Right none">
 
-    <div id="bdata_l">
-        <p><img src="./xpic/hainanzf1.png" width="128" height="128"></p>
-        <p id="mAdder">中国 海南省 海南政法职业学院</p>
-        <p>学员总数：人</p>
-        <p>教职总数：人</p>
-        <p>电脑终端总数：台</p>
-        <p>云桌面：台</p>
-    </div>
+    
 
 </div>
 
@@ -383,13 +374,13 @@
                 value: 1,
                 children: [
                     {
-                        name: "1111",
+                        name: "一楼",
                         symbol: "./image/xx1.png",
                         symbolSize: 64,
                         value: 2,
                         children: [
                             {
-                                name: "222222",
+                                name: "102室",
                                 symbol: "./image/xx1.png",
                                 symbolSize: 64,
                                 value: 3,
@@ -404,7 +395,7 @@
 //                                ]
                             },
                             {
-                                name: "444444",
+                                name: "103室",
                                 symbol: "./image/xx1.png",
                                 symbolSize: 64,
                                 value: 4
