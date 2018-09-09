@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 
 import Element from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+// import 'element-ui/lib/theme-chalk/index.css'
 
 import 'babel-polyfill'
 
@@ -24,8 +24,8 @@ window.echartBtns = echartBtns
 Vue.config.productionTip = false
 
 // 引入 css
-import '@/assets/css/framework.css'
-import '@/assets/css/animate.css'
+// import '@/assets/css/framework.css'
+// import '@/assets/css/animate.css'
 
 import $ from 'jquery'
 // jquery plugin

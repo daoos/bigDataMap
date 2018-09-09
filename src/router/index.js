@@ -21,7 +21,7 @@ export default new Router({
         { path: '/thr/:cityCode?', component: _import('dataMap/thr'),meta:{
             path:'/thr'
         } },
-        { path: '*', redirect: '/dataMap/中国' },
+        // { path: '*', redirect: '/dataMap/中国' },
         {
             path: '/dataMap/point/:svgMapId',
             name: 'point',
@@ -50,5 +50,14 @@ export default new Router({
         { path: '/refresh', component: _import('utils/goBack'), hidden: true },
 
         { path: '/dataMap/veruntable/:veruntableId', name: 'veruntable',component: _import('dataMap/veruntable') },
+
+        { path: '*', redirect: '/v2/中国' },
+        //v2
+        {
+            path: '/v2/:cityCode?',
+            name: 'index',
+            component: _import('v2/index'),
+        },
+
     ]
 })
