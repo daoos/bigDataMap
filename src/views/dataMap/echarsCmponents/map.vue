@@ -26,7 +26,6 @@ function nTooltip(params, ticket, callback) {
       $(".DivShow").remove();
       ShowMarkTip(params, ticket, callback);
       break;
-
     case "map":
       /** 区块 */
       $(".DivShow").remove();
@@ -38,7 +37,6 @@ function nTooltip(params, ticket, callback) {
       ShowMapTip(params, ticket, callback);
       break;
   }
-
   return "...";
 }
 var markEZinfoList = {};
@@ -58,7 +56,6 @@ function ShowMarkTip(params, ticket, callback) {
       DivShow += "<p>显示名称 " + markEZinfoList[markID].name + "</p>";
       //DivShow += "<p>跳转网址 "+ markEZinfoList[ markID  ].url +"</p>";
     }
-
     if (markEZinfoList[markID].online_workstation_num != -1) {
       DivShow +=
         "<p>在线终端数 " +
@@ -69,18 +66,15 @@ function ShowMarkTip(params, ticket, callback) {
     if (markEZinfoList[markID].location != -1) {
       DivShow += "<p>地址 " + markEZinfoList[markID].location + "</p>";
     }
-
     if (markEZinfoList[markID].total_workstation_num != -1) {
       DivShow +=
         "<p>终端总数 " + markEZinfoList[markID].total_workstation_num + "</p>";
       //DivShow += "<p>坐标 "+ markEZinfoList[ markID  ].coordinate +"</p>";
     }
-
     if (markEZinfoList[markID].online_server_num != -1) {
       DivShow +=
         "<p>在线服务器数 " + markEZinfoList[markID].online_server_num + "</p>";
     }
-
     if (markEZinfoList[markID].admin_contact != -1) {
       // "<img src='" + hostUrl + markEZinfoList[markID].photo_url + "'/>";
       DivShow += "<p>联系方式 " + markEZinfoList[markID].admin_contact + "</p>";
@@ -90,13 +84,11 @@ function ShowMarkTip(params, ticket, callback) {
     }
     if (markEZinfoList[markID].photo_url != -1) {
       DivShow += "<p>照片:</p>";
-
       DivShow +=
         "<img style='max-width:150px;max-height:150px;padding-left:50px' src='//" +
         markEZinfoList[markID].photo_url +
         "'/>";
     }
-
     DivShow += "</div>";
     DivShow += "</div>";
     //  setTimeout( function () {
@@ -157,7 +149,6 @@ function MapMarkTipClick(params) {
   }
 }
 var geoCoordMap = {};
-
 var convertData = function(data) {
   var res = [];
   for (var i = 0; i < data.length; i++) {
@@ -282,7 +273,6 @@ export default {
                 show: true
               }
             },
-
             itemStyle: {
               normal: {
                 color: "#EDCF33",
@@ -433,7 +423,6 @@ export default {
       this.renderPage(this.curentCityName);
       console.log(this.MainMapOption);
       this.MainMapDom.on("click", this.mapJump);
-
       this.MainMapOption.toolbox.feature.myTool2.onclick = function() {
         //返回上一级
         var nextMap = "/中国";
@@ -457,7 +446,6 @@ export default {
         $(".bottom").toggleClass("fadeOutDown");
         $(".center").toggleClass("width100height100 bounceIn");
         $("#MainMap").toggleClass("mainMap");
-
         self.MainMapDom.resize();
       };
       this.MainMapOption.toolbox.feature.myTool1.onclick = function() {
@@ -497,7 +485,6 @@ export default {
             "</td>";
         }
         table += "</tbody></table>";
-
         $(".modal-body").html(table);
         $("#myModal").modal();
         if(isCity){
@@ -551,7 +538,6 @@ export default {
       if (this.settingConfig.echartType == 1) {
         this.MainMapOption.geo.show = true;
         this.MainMapOption.series = this.mainMap2D.series;
-
         this.$store
           .dispatch("GET_MAP_JSON", { curentCityCode: this.curentCityCode })
           .then(res => {
@@ -572,7 +558,6 @@ export default {
         this.MainMapOption.series = this.MainMap3D.series;
         this.MainMapOption.geo3D = this.MainMap3D.geo3D;
         this.MainMapOption.geo.show = false;
-
         this.$store
           .dispatch("GET_MAP_JSON", {
             curentCityCode: cityMap3D[this.curentCityName]
@@ -582,7 +567,6 @@ export default {
             self.MainMapOption.series[1].name = this.curentCityName;
             self.MainMapOption.series[1].map = this.curentCityName;
             self.$echarts.registerMap(this.curentCityName, data);
-
             self.MainMapDom.setOption(self.MainMapOption, true);
           })
           .catch("GET_MAP_SVG", { curentCityCode: this.curentCityCode })
@@ -625,14 +609,12 @@ export default {
             if (this.settingConfig.echartType == 1) {
               self.MainMapOption.geo.show = true;
               self.MainMapOption.series = self.mainMap2D["series"];
-
               self.MainMapOption.series[0].data = [];
               self.MainMapOption.series[0].data = convertData(self.dblist);
             } else if (this.settingConfig.echartType == 2) {
               self.MainMapOption.geo.show = false;
               self.MainMapOption.series = self.MainMap3D["series"];
               self.MainMapOption.geo3D = self.MainMap3D.geo3D;
-
               self.MainMapOption.series[0].data = [];
               self.MainMapOption.series[0].data = convertData(self.dblist);
             }
@@ -660,7 +642,6 @@ export default {
           self.MainMapEchartRender();
           self.MainMapDom.hideLoading();
         });
-
       let paramsTerminals = {
         curentCityCode: this.curentCityCode,
         dz_type: "terminals"
@@ -675,7 +656,6 @@ export default {
             res.data.terminals.all - res.data.terminals.online,
             2
           );
-
           $("#offline-terminals-num").animateNum(
             res.data.terminals.all - res.data.terminals.online,
             2
@@ -758,5 +738,3 @@ export default {
   left: -50%;
 }
 </style>
-
-

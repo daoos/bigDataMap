@@ -200,43 +200,43 @@ var data86 = {
     },
     "cityCustomActivity": {
         "result": [{
-                "cityName": "192.168.0.36",
+                "cityName": "广西",
                 "termNum": "69"
             },
             {
-                "cityName": "192.168.0.46",
+                "cityName": "云南",
                 "termNum": "176"
             },
             {
-                "cityName": "192.168.0.19",
+                "cityName": "重庆",
                 "termNum": "215"
             },
             {
-                "cityName": "192.168.0.251",
+                "cityName": "湖南",
                 "termNum": "300"
             },
             {
-                "cityName": "192.168.0.86",
+                "cityName": "上海",
                 "termNum": "350"
             },
             {
-                "cityName": "192.168.0.73",
+                "cityName": "河南",
                 "termNum": "405"
             },
             {
-                "cityName": "192.168.0.99",
+                "cityName": "河北",
                 "termNum": "509"
             },
             {
-                "cityName": "192.168.0.16",
+                "cityName": "天津",
                 "termNum": "576"
             },
             {
-                "cityName": "192.168.0.139",
+                "cityName": "新疆",
                 "termNum": "612"
             },
             {
-                "cityName": "192.168.0.146",
+                "cityName": "云南",
                 "termNum": "699"
             }
         ]
@@ -331,9 +331,9 @@ var data86 = {
     },
     "terminals": {
         terminals: {
-            "all": 2342,
+            "all": 89429,
             "broken": 56,
-            "online": 67
+            "online": 38145
         }
     },
     "terminalTypeStatistics": {
@@ -553,43 +553,43 @@ var data320000 = {
     },
     "cityCustomActivity": {
         "result": [{
-                "cityName": "192.168.3.36",
+                "cityName": "湖北",
                 "termNum": "629"
             },
             {
-                "cityName": "192.168.2.46",
+                "cityName": "湖南",
                 "termNum": "116"
             },
             {
-                "cityName": "192.168.3.19",
+                "cityName": "广西",
                 "termNum": "255"
             },
             {
-                "cityName": "192.168.9.251",
+                "cityName": "广州",
                 "termNum": "340"
             },
             {
-                "cityName": "192.168.0.86",
+                "cityName": "上海",
                 "termNum": "230"
             },
             {
-                "cityName": "192.168.0.73",
+                "cityName": "河南",
                 "termNum": "423"
             },
             {
-                "cityName": "192.168.6.99",
+                "cityName": "福建",
                 "termNum": "509"
             },
             {
-                "cityName": "192.168.7.16",
+                "cityName": "广西",
                 "termNum": "234"
             },
             {
-                "cityName": "192.168.0.139",
+                "cityName": "新疆",
                 "termNum": "622"
             },
             {
-                "cityName": "192.168.0.146",
+                "cityName": "云南",
                 "termNum": "959"
             }
         ]
@@ -684,9 +684,9 @@ var data320000 = {
     },
     "terminals": {
         terminals: {
-            "all": 2342,
+            "all": 89429,
             "broken": 56,
-            "online": 67
+            "online": 38145
         }
     },
     "terminalTypeStatistics": {
@@ -870,43 +870,43 @@ var data320100 = {
     },
     "cityCustomActivity": {
         "result": [{
-                "cityName": "192.168.3.36",
+                "cityName": "湖北",
                 "termNum": "629"
             },
             {
-                "cityName": "192.168.2.46",
+                "cityName": "湖南",
                 "termNum": "116"
             },
             {
-                "cityName": "192.168.3.19",
+                "cityName": "广西",
                 "termNum": "965"
             },
             {
-                "cityName": "192.168.9.961",
+                "cityName": "广西",
                 "termNum": "340"
             },
             {
-                "cityName": "192.168.0.86",
+                "cityName": "上海",
                 "termNum": "230"
             },
             {
-                "cityName": "192.168.0.73",
+                "cityName": "河南",
                 "termNum": "423"
             },
             {
-                "cityName": "192.168.6.99",
+                "cityName": "福建",
                 "termNum": "509"
             },
             {
-                "cityName": "192.168.7.16",
+                "cityName": "广西",
                 "termNum": "234"
             },
             {
-                "cityName": "192.168.0.139",
+                "cityName": "新疆",
                 "termNum": "622"
             },
             {
-                "cityName": "192.168.0.146",
+                "cityName": "云南",
                 "termNum": "959"
             }
         ]
@@ -1001,9 +1001,9 @@ var data320100 = {
     },
     "terminals": {
         terminals: {
-            "all": 2342,
+            "all": 89429,
             "broken": 56,
-            "online": 67
+            "online": 38145
         }
 
     },
@@ -1188,43 +1188,43 @@ var data420000 = {
     },
     "cityCustomActivity": {
         "result": [{
-                "cityName": "192.168.2.36",
+                "cityName": "新疆",
                 "termNum": "629"
             },
             {
-                "cityName": "192.168.3.46",
+                "cityName": "广州",
                 "termNum": "276"
             },
             {
-                "cityName": "192.168.0.19",
+                "cityName": "重庆",
                 "termNum": "245"
             },
             {
-                "cityName": "192.168.0.251",
+                "cityName": "湖南",
                 "termNum": "340"
             },
             {
-                "cityName": "192.168.0.86",
+                "cityName": "上海",
                 "termNum": "320"
             },
             {
-                "cityName": "192.168.0.73",
+                "cityName": "河南",
                 "termNum": "425"
             },
             {
-                "cityName": "192.168.0.99",
+                "cityName": "河北",
                 "termNum": "519"
             },
             {
-                "cityName": "192.168.0.16",
+                "cityName": "天津",
                 "termNum": "526"
             },
             {
-                "cityName": "192.168.3.139",
+                "cityName": "北京",
                 "termNum": "342"
             },
             {
-                "cityName": "192.168.0.146",
+                "cityName": "云南",
                 "termNum": "699"
             }
         ]
@@ -1290,9 +1290,9 @@ var data420000 = {
     },
     "terminals": {
         terminals: {
-            "all": 2342,
+            "all": 89429,
             "broken": 56,
-            "online": 67
+            "online": 38145
         }
 
     },
@@ -1506,43 +1506,43 @@ var data420100 = {
     },
     "cityCustomActivity": {
         "result": [{
-                "cityName": "192.168.2.36",
+                "cityName": "新疆",
                 "termNum": "629"
             },
             {
-                "cityName": "192.168.3.46",
+                "cityName": "广州",
                 "termNum": "276"
             },
             {
-                "cityName": "192.168.0.19",
+                "cityName": "重庆",
                 "termNum": "245"
             },
             {
-                "cityName": "192.168.0.961",
+                "cityName": "广东",
                 "termNum": "340"
             },
             {
-                "cityName": "192.168.0.86",
+                "cityName": "上海",
                 "termNum": "320"
             },
             {
-                "cityName": "192.168.0.73",
+                "cityName": "河南",
                 "termNum": "496"
             },
             {
-                "cityName": "192.168.0.99",
+                "cityName": "河北",
                 "termNum": "519"
             },
             {
-                "cityName": "192.168.0.16",
+                "cityName": "天津",
                 "termNum": "526"
             },
             {
-                "cityName": "192.168.3.139",
+                "cityName": "北京",
                 "termNum": "342"
             },
             {
-                "cityName": "192.168.0.146",
+                "cityName": "云南",
                 "termNum": "699"
             }
         ]
@@ -1608,9 +1608,9 @@ var data420100 = {
     },
     "terminals": {
         terminals: {
-            "all": 2342,
+            "all": 89429,
             "broken": 56,
-            "online": 67
+            "online": 38145
         }
 
     },
@@ -1824,15 +1824,15 @@ var data440000 = {
     },
     "cityCustomActivity": {
         "result": [{
-                "cityName": "192.168.0.76",
+                "cityName": "四川",
                 "termNum": "69"
             },
             {
-                "cityName": "192.168.0.46",
+                "cityName": "云南",
                 "termNum": "176"
             },
             {
-                "cityName": "192.168.0.19",
+                "cityName": "重庆",
                 "termNum": "211"
             },
             {
@@ -1840,7 +1840,7 @@ var data440000 = {
                 "termNum": "700"
             },
             {
-                "cityName": "192.168.0.86",
+                "cityName": "上海",
                 "termNum": "710"
             },
             {
@@ -1848,19 +1848,19 @@ var data440000 = {
                 "termNum": "401"
             },
             {
-                "cityName": "192.168.0.99",
+                "cityName": "河北",
                 "termNum": "109"
             },
             {
-                "cityName": "192.168.0.16",
+                "cityName": "天津",
                 "termNum": "176"
             },
             {
-                "cityName": "192.168.0.179",
+                "cityName": "四川",
                 "termNum": "612"
             },
             {
-                "cityName": "192.168.0.146",
+                "cityName": "云南",
                 "termNum": "699"
             }
         ]
@@ -1926,9 +1926,9 @@ var data440000 = {
     },
     "terminals": {
         terminals: {
-            "all": 2342,
+            "all": 89429,
             "broken": 56,
-            "online": 67
+            "online": 38145
         }
 
     },
@@ -2142,15 +2142,15 @@ var data440300 = {
     },
     "cityCustomActivity": {
         "result": [{
-                "cityName": "192.168.0.76",
+                "cityName": "四川",
                 "termNum": "69"
             },
             {
-                "cityName": "192.168.0.46",
+                "cityName": "云南",
                 "termNum": "176"
             },
             {
-                "cityName": "192.168.0.19",
+                "cityName": "重庆",
                 "termNum": "211"
             },
             {
@@ -2158,7 +2158,7 @@ var data440300 = {
                 "termNum": "700"
             },
             {
-                "cityName": "192.168.0.86",
+                "cityName": "上海",
                 "termNum": "960"
             },
             {
@@ -2166,19 +2166,19 @@ var data440300 = {
                 "termNum": "401"
             },
             {
-                "cityName": "192.168.0.99",
+                "cityName": "河北",
                 "termNum": "109"
             },
             {
-                "cityName": "192.168.0.16",
+                "cityName": "天津",
                 "termNum": "176"
             },
             {
-                "cityName": "192.168.0.179",
+                "cityName": "四川",
                 "termNum": "612"
             },
             {
-                "cityName": "192.168.0.146",
+                "cityName": "云南",
                 "termNum": "699"
             }
         ]
@@ -2244,9 +2244,9 @@ var data440300 = {
     },
     "terminals": {
         terminals: {
-            "all": 2342,
+            "all": 89429,
             "broken": 56,
-            "online": 67
+            "online": 38145
         }
 
     },
