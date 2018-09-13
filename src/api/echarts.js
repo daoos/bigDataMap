@@ -3,7 +3,7 @@ import { request, requestJson } from '@/utils/request'
 // 引入离线的js文件
 import { mapDataJs, flare } from "static/json/data";
 // 地图的离线数据
-import { Infos } from "static/json/jsons"
+// import { Infos } from "static/json/jsons"
 
 
 var curentUrl = window.location.href,
@@ -19,32 +19,32 @@ function GetRandomNum(Min, Max) {
     return (Min + Math.round(Rand * Range));
 }
 
-isFileRequest = true
+// isFileRequest = true
 
 export function getMapJson(curentCityCode) {
     // //离线
-    if (isFileRequest || true) {
-        var data = {};
-        data =
-            Infos.Infos1["json" + curentCityCode] == undefined ?
-            Infos.Infos2["json" + curentCityCode] :
-            Infos.Infos1["json" + curentCityCode];
-            console.log(curentCityCode,data)
-        return new Promise(resolve => {
-            resolve({ data: data })
-        }, reject => {})
-    } else {
-        let path = curentCityCode + ".json"
-        return request({
-            url: 'json/china-main-city/' + path,
-            method: 'get',
-        })
-    }
-    // let path = curentCityCode + ".json"
-    // return requestJson({
-    //     url: 'json/china-main-city/' + path,
-    //     method: 'get',
-    // })
+    // if (isFileRequest || true) {
+    //     var data = {};
+    //     data =
+    //         Infos.Infos1["json" + curentCityCode] == undefined ?
+    //         Infos.Infos2["json" + curentCityCode] :
+    //         Infos.Infos1["json" + curentCityCode];
+    //         console.log(curentCityCode,data)
+    //     return new Promise(resolve => {
+    //         resolve({ data: data })
+    //     }, reject => {})
+    // } else {
+    //     let path = curentCityCode + ".json"
+    //     return request({
+    //         url: 'json/china-main-city/' + path,
+    //         method: 'get',
+    //     })
+    // }
+    let path = curentCityCode + ".json"
+    return requestJson({
+        url: 'json/china-main-city/' + path,
+        method: 'get',
+    })
 }
 
 /**

@@ -196,7 +196,7 @@ export default {
         },
         toolbox: {
           show: true,
-          left: "72%",
+          left: "71%",
           top: "150px",
           zlevel: 10000,
           feature: {

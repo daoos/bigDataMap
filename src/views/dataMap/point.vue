@@ -109,7 +109,6 @@ export default {
 <style>
 #app {
   width: auto;
-  overflow: auto;
   background: #021637;
 }
 #pageWaper {
