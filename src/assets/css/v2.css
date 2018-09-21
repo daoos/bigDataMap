@@ -1,0 +1,220 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Microsoft YaHei; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  font-size: 30px; }
+
+body {
+  min-width: 1600px;
+  min-height: 900px;
+  height: 100vh;
+  overflow-x: auto;
+  background: url("../img/bg.png"); }
+
+.border1 {
+  border: 1px solid red; }
+
+.header {
+  background: url(../img/headerImg.png) center center no-repeat;
+  background-size: 100% 100%;
+  height: 9.733%;
+  position: relative;
+  z-index: 10; }
+  .header .header-title {
+    padding: 0.4%;
+    height: 75%;
+    text-align: center;
+    color: #fff;
+    font-size: 1rem; }
+  .header .header-menu {
+    position: absolute;
+    left: 2.187%;
+    bottom: 0; }
+  .header .header-setting {
+    position: absolute;
+    right: 2.187%;
+    bottom: 0; }
+
+.main {
+  height: 90.277%;
+  font-size: 1rem;
+  padding: 0.5% 0;
+  width: 95.8%;
+  margin: 0 auto;
+  position: relative; }
+  .main #left, .main #right {
+    position: absolute;
+    z-index: 10;
+    width: 25%;
+    height: 66.45%; }
+    .main #left .echart-item, .main #right .echart-item {
+      height: 48.5%;
+      margin-bottom: 2%;
+      border: 10px solid transparent;
+      -moz-border-image: url("../img/borderImg.png") 30 30 stretch;
+      /* Old Firefox */
+      -webkit-border-image: url("../img/borderImg.png") 30 30 stretch;
+      /* Safari and Chrome */
+      -o-border-image: url("../img/borderImg.png") 30 30 stretch;
+      /* Opera */
+      border-image: url("../img/borderImg.png") 30 30 stretch;
+      background: rgba(20, 50, 61, 0.5); }
+      .main #left .echart-item .item-title, .main #right .echart-item .item-title {
+        font-size: 0.533rem;
+        color: #ffffff;
+        margin-top: -9px;
+        margin-left: -9px;
+        margin-right: -9px;
+        height: 13.46%;
+        line-height: 200%;
+        background: #14323D; }
+        .main #left .echart-item .item-title .item-title-icon, .main #right .echart-item .item-title .item-title-icon {
+          display: inline-block;
+          margin-left: 0.5rem;
+          margin-top: 0.3rem;
+          width: 0.5rem;
+          height: 0.5rem;
+          vertical-align: baseline; }
+        .main #left .echart-item .item-title .tool-group, .main #right .echart-item .item-title .tool-group {
+          float: right; }
+          .main #left .echart-item .item-title .tool-group .tool, .main #right .echart-item .item-title .tool-group .tool {
+            float: right;
+            width: 44px;
+            text-align: center;
+            border-left: 1px solid #0A1922;
+            cursor: pointer; }
+            .main #left .echart-item .item-title .tool-group .tool .item-title-icon, .main #right .echart-item .item-title .tool-group .tool .item-title-icon {
+              display: inline-block;
+              margin-left: 0rem;
+              margin-top: 0rem;
+              width: 0.5rem;
+              height: 0.5rem; }
+      .main #left .echart-item .echart-container, .main #right .echart-item .echart-container {
+        height: 90%; }
+  .main #right {
+    right: 0; }
+  .main #bottom {
+    position: absolute;
+    bottom: 2%;
+    height: 29.77%;
+    width: 100%;
+    background: rgba(20, 50, 61, 0.5); }
+    .main #bottom .echart-item {
+      display: inline-block;
+      margin: -5px;
+      height: 100%;
+      width: 25%;
+      border: 18px solid transparent;
+      -moz-border-image: url("../img/bottomBorderImg.png") 30 30 stretch;
+      /* Old Firefox */
+      -webkit-border-image: url("../img/bottomBorderImg.png") 30 30 stretch;
+      /* Safari and Chrome */
+      -o-border-image: url("../img/bottomBorderImg.png") 30 30 stretch;
+      /* Opera */
+      border-image: url("../img/bottomBorderImg.png") 30 30 stretch; }
+      .main #bottom .echart-item .item-title {
+        font-size: 0.533rem;
+        color: #ffffff;
+        margin-top: -9px;
+        margin-left: -9px;
+        margin-right: -9px;
+        height: 13.46%;
+        line-height: 200%; }
+        .main #bottom .echart-item .item-title .item-title-icon {
+          display: inline-block;
+          margin-left: 0.8rem;
+          margin-top: -0.1rem;
+          width: 0.25rem;
+          height: 0.25rem;
+          vertical-align: middle; }
+        .main #bottom .echart-item .item-title .tool-group {
+          float: right; }
+          .main #bottom .echart-item .item-title .tool-group .tool {
+            float: right;
+            width: 44px;
+            text-align: center;
+            border-left: 1px solid #0A1922;
+            cursor: pointer; }
+            .main #bottom .echart-item .item-title .tool-group .tool .item-title-icon {
+              display: inline-block;
+              margin-left: 0rem;
+              margin-top: 0rem;
+              width: 0.5rem;
+              height: 0.5rem; }
+      .main #bottom .echart-item .echart-container {
+        height: 90%; }
+  .main #center {
+    position: absolute;
+    width: 50%;
+    height: 66.45%;
+    left: 25%; }
+    .main #center .echart-container {
+      width: 100%;
+      height: 100%; }
+  .main #oneEcharts {
+    margin-top: 5%;
+    height: 90%;
+    width: 100%; }
+    .main #oneEcharts .echart-item {
+      height: 95%;
+      margin-bottom: 2%;
+      border: 10px solid transparent;
+      -moz-border-image: url("../img/borderImg.png") 30 30 stretch;
+      /* Old Firefox */
+      -webkit-border-image: url("../img/borderImg.png") 30 30 stretch;
+      /* Safari and Chrome */
+      -o-border-image: url("../img/borderImg.png") 30 30 stretch;
+      /* Opera */
+      border-image: url("../img/borderImg.png") 30 30 stretch;
+      background: rgba(20, 50, 61, 0.5); }
+      .main #oneEcharts .echart-item .item-title {
+        font-size: 0.533rem;
+        color: #ffffff;
+        margin-top: -9px;
+        margin-left: -9px;
+        margin-right: -9px;
+        height: 13.46%;
+        max-height: 3.8vh;
+        line-height: 200%;
+        background: #14323D; }
+        .main #oneEcharts .echart-item .item-title .item-title-icon {
+          display: inline-block;
+          margin-left: 0.5rem;
+          margin-top: 0.3rem;
+          width: 0.5rem;
+          height: 0.5rem;
+          vertical-align: baseline; }
+        .main #oneEcharts .echart-item .item-title .tool-group {
+          float: right; }
+          .main #oneEcharts .echart-item .item-title .tool-group .tool {
+            float: right;
+            width: 44px;
+            text-align: center;
+            border-left: 1px solid #0A1922;
+            cursor: pointer; }
+            .main #oneEcharts .echart-item .item-title .tool-group .tool .item-title-icon {
+              display: inline-block;
+              margin-left: 0rem;
+              margin-top: 0rem;
+              width: 0.5rem;
+              height: 0.5rem; }
+      .main #oneEcharts .echart-item .echart-container {
+        height: 90%; }
+
+.height100 {
+  height: 100%; }
+
+/*# sourceMappingURL=index.css.map */

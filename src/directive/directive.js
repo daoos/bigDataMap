@@ -120,6 +120,7 @@ Vue.directive('beDraged', function(el, binding) {
         // }
         sessionStorage.setItem('sidebarOpened',true)
         store.dispatch('SET_SLDEBAR', { opened: true })
+        console.log(key,id)
         store.dispatch('SET_DRAG_CONFIG_DATA', { key: key, val: id })
     }
 })

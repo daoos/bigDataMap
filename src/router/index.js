@@ -50,5 +50,19 @@ export default new Router({
         { path: '/refresh', component: _import('utils/goBack'), hidden: true },
 
         { path: '/dataMap/veruntable/:veruntableId', name: 'veruntable',component: _import('dataMap/veruntable') },
+        // v2
+        {
+            path: '/v2/:cityCode?',
+            name: 'v2Index',
+            component: _import('v2/index'),
+            meta:{
+                path:'/v2'
+            }
+        },
+        {
+            path: '/v2/oneEcharts/:curentEchartsType/:cityCode?',
+            name: 'v2OneEcharts',
+            component: _import('v2/oneEcharts'),
+        },
     ]
 })

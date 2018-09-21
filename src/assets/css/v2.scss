@@ -1,0 +1,164 @@
+@import "_mixin/index";
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Microsoft YaHei;
+}
+
+* {
+  @include box-sizing(border-box);
+}
+
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+//根据媒体查询动态的改变字体大小
+html {
+  font-size: 30px;
+}
+
+body {
+  min-width: 1600px;
+  min-height: 900px;
+  height: 100vh;
+  overflow-x: auto;
+  background: url("/../../../img/bg.png");
+}
+
+.border1 {
+  border: 1px solid red;
+}
+
+//头部
+.header {
+  background: url(/../../../img/headerImg.png) center center no-repeat;
+  background-size: 100% 100%;
+  height: 9.733%;
+  position: relative;
+
+  .header-title {
+    padding: 0.4%;
+    height: 75%;
+    text-align: center;
+    color: #fff;
+  }
+  .header-menu {
+    position: absolute;
+    //left: 42px;
+    //top: 56px;
+    left: 2.187%;
+    bottom: 0;
+
+  }
+  .header-setting {
+    position: absolute;
+    //right: 42px;
+    //top: 56px;
+    right: 2.187%;
+    bottom: 0;
+  }
+}
+
+//主体部分
+.main {
+  height: 90.277%;
+  font-size: 1rem;
+  padding: 0.5% 0;
+  width: 95.8%;
+  margin: 0 auto;
+  position: relative;
+  #left, #right {
+    position: absolute;
+    //width: 23.95%;
+    width: 25%;
+    height: 66.45%;
+    .echart-item {
+      height: 48.5%;
+      margin-bottom: 2%;
+      border: 10px solid transparent;
+      -moz-border-image: url('/../../../img/borderImg.png') 30 30 stretch; /* Old Firefox */
+      -webkit-border-image: url('/../../../img/borderImg.png') 30 30 stretch; /* Safari and Chrome */
+      -o-border-image: url('/../../../img/borderImg.png') 30 30 stretch; /* Opera */
+      border-image: url('/../../../img/borderImg.png') 30 30 stretch;
+      background: rgba(20, 50, 61, 0.5);
+      .item-title {
+        font-size: 0.533rem;
+        color: #ffffff;
+        margin-top: -9px;
+        margin-left: -9px;
+        margin-right: -9px;
+        height: 13.46%;
+        line-height: 200%;
+        background: #14323D;
+        .item-title-icon {
+          display: inline-block;
+          margin-left: 0.5rem;
+          margin-top: 0.3rem;
+          width: 0.5rem;
+          height: 0.5rem;
+        }
+      }
+      .echart-container {
+        //border: 1px solid red;
+        height: 90%;
+      }
+    }
+  }
+  #right {
+    right: 0;
+  }
+  #bottom {
+    position: absolute;
+    bottom: 2%;
+    height: 29.77%;
+    width: 100%;
+    background: rgba(20, 50, 61, 0.5);
+    .echart-item {
+      display: inline-block;
+      margin: -5px;
+      height: 100%;
+      width: 25%;
+      border: 18px solid transparent;
+      -moz-border-image: url('/../../../img/bottomBorderImg.png') 30 30 stretch; /* Old Firefox */
+      -webkit-border-image: url('/../../../img/bottomBorderImg.png') 30 30 stretch; /* Safari and Chrome */
+      -o-border-image: url('/../../../img/bottomBorderImg.png') 30 30 stretch; /* Opera */
+      border-image: url('/../../../img/bottomBorderImg.png') 30 30 stretch;
+      //background: rgba(20, 50, 61, 0.5);
+      .item-title {
+        font-size: 0.533rem;
+        color: #ffffff;
+        margin-top: -9px;
+        margin-left: -9px;
+        margin-right: -9px;
+        height: 13.46%;
+        line-height: 200%;
+        .item-title-icon {
+          display: inline-block;
+          margin-left: 0.8rem;
+          margin-top: -0.1rem;
+          width: 0.25rem;
+          height: 0.25rem;
+          vertical-align: middle;
+        }
+      }
+      .echart-container {
+        //border: 1px solid red;
+        height: 90%;
+      }
+    }
+  }
+  #center{
+    position: absolute;
+    width: 50%;
+    height: 66.45%;
+    left: 25%;
+    .echart-container{
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+}

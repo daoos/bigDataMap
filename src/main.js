@@ -7,7 +7,7 @@ import router from './router'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
-import 'babel-polyfill'
+// import 'babel-polyfill'
 
 import i18n from './lang/index' // 国际化
 Vue.use(Element, {
@@ -47,7 +47,7 @@ import store from './store'
 import './icons' // icon
 
 // 自定义指令
-import directs from './directive/directive'
+import './directive/directive'
 
 Vue.prototype.$echarts = echarts
 

@@ -29,7 +29,7 @@ export function getMapJson(curentCityCode) {
             Infos.Infos1["json" + curentCityCode] == undefined ?
             Infos.Infos2["json" + curentCityCode] :
             Infos.Infos1["json" + curentCityCode];
-            console.log(curentCityCode,data)
+            // console.log(curentCityCode,data)
         return new Promise(resolve => {
             resolve({ data: data })
         }, reject => {})

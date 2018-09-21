@@ -222,7 +222,6 @@ export default {
           ) {
             // xxdata.appUseRanking["result"].map(function(val) {
             xxdata.data["result"].map(function(val) {
-              console.log(val["appName"],val["userNum"])
               self.appUseRankingOption.yAxis[0].data.push(val["appName"]);
               self.appUseRankingOption.series[0].data.push(val["userNum"]);
             });
