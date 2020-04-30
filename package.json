@@ -14,7 +14,7 @@
     "echarts": "^4.1.0",
     "echarts-gl": "^1.1.1",
     "element-ui": "^2.4.1",
-    "jquery": "^1.11.3",
+    "jquery": "^3.5.0",
     "mockjs": "1.0.1-beta3",
     "three": "^0.92.0",
     "vue": "^2.5.2",
